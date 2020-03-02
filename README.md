@@ -15,3 +15,22 @@ Everything is logged to Neptune and can be:
 * accessed 
 
 ![image](https://i0.wp.com/neptune.ai/wp-content/uploads/Screenshot-2020-02-18-at-15.43.23.png?resize=1024%2C892&ssl=1)
+
+# Installation
+
+Simply run:
+
+```R
+install.packages('neptune')
+```
+
+and
+
+```R
+install_neptune()
+```
+
+# Documentation
+
+For more information go to [Neptune documentation](https://docs.neptune.ai/)
+
