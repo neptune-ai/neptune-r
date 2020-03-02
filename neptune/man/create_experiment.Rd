@@ -24,11 +24,10 @@ create_experiment(name = 'my first experiment',
 }
 
 \author{
-\strong{Maintainer}: Jakub Czakon \email{jakub.czakon@neptune.ai}
-
 Authors:
 \itemize{
-  \item Mateusz Dominiak \email{XXX@YYY.com}
+  \item Mateusz Dominiak
+  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
 }
 }
 

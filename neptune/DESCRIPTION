@@ -2,10 +2,14 @@ Package: neptune
 Type: Package
 Title: R interface to the Neptune.ai experiment tracking and management tool.
 Version: 0.1.0
-Author: Mateusz Dominiak, Jakub Czakon
-Maintainer: The package maintainer <jakub.czakon@neptune.ai>
-Description: Neptune helps you organize your machine learning experiemnts.
+Authors: Mateusz Dominiak, Jakub Czakon <jakub.czakon@neptune.ai>
+Maintainer: Jakub Czakon <jakub.czakon@neptune.ai>
+Description: R Interface to Neptune, experiment tracking tool that helps you organize your machine learning experiemnts. 
     You can log your hyperparameter, metrics, model binaries and performance charts,
     organize them with tags and names and share everything easily in the app.
+    For more information see <https://neptune.ai/>.
+License: Apache License 2.0
+URL: https://github.com/neptune-ai/neptune-r
+BugReports: https://github.com/neptune-ai/neptune-r/issues
 Encoding: UTF-8
 LazyData: true

@@ -16,11 +16,10 @@ get_neptune()
 }
 
 \author{
-\strong{Maintainer}: Jakub Czakon \email{jakub.czakon@neptune.ai}
-
 Authors:
 \itemize{
-  \item Mateusz Dominiak \email{XXX@YYY.com}
+  \item Mateusz Dominiak
+  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
 }
 }
 
