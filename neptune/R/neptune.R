@@ -1,7 +1,7 @@
 install_neptune <- function() {
 }
 
-init_neptune <- function(project_qualified_name,
+init_neptune <- function(project_name,
                         api_token = Sys.getenv('NEPTUNE_API_TOKEN')) {
   if (!require("reticulate"))
     stop('couldn\'t load reticulate package')
@@ -15,7 +15,7 @@ init_neptune <- function(project_qualified_name,
   options('neptune') <- neptune
 
   return(
-    neptune$init(project_qualified_name = project_qualified_name,
+    neptune$init(project_qualified_name = project_name,
                  api_token = api_token)
   )
 }
@@ -23,7 +23,7 @@ init_neptune <- function(project_qualified_name,
 get_neptune <- function() {
   ret <- getOption('neptune')
   if (is.null('neptune'))
-    stop('Please call initNeptune first')
+    stop('Please call init_neptune first')
   return(ret)
 }
 
@@ -35,7 +35,7 @@ stop_experiment <- function() {
   get_neptune()$stop()
 }
 
-create_experiment <- function(name,
+create_experiment <- function(name = 'default',
                              params = list(),
                              tags = c()) {
   get_neptune()$create_experiment(name = name,
@@ -55,6 +55,6 @@ log_metric <- function(metric, value) {
 log_artifact <- function(filename) {
   get_neptune()$log_artifact(filename)
 }
-log_image <- function(name, filename) {
+log_image <- function(name='image_channel', filename) {
   get_neptune()$log_image(name, filename)
 }

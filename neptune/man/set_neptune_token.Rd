@@ -1,18 +1,22 @@
-\name{install_neptune}
+\name{set_neptune_token}
 
-\alias{install_neptune}
+\alias{set_neptune_token}
 
 \title{
-Install Neptune client
+Set Neptune API token
 }
 
 \description{
-Instructions for installing neptune client package.
+It sets your Neptune API token to the 'NEPTUNE_API_TOKEN' environment variable, so that Neptune knows who are you.
 Neptune is a lightweight experiment tracking tool, for more information see <https://neptune.ai/>.
 }
 
 \usage{
-install_neptune()
+set_neptune_token(token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBz'')
+}
+
+\arguments{
+\item{token}{string, your Neptune API token that you can copy from your Neptune account}
 }
 
 \author{
@@ -35,7 +39,8 @@ Useful links:
 
 \examples{
 install_neptune()
-set_neptune_token(token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBz')
+set_neptune_token(token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBz'')
+init_neptune(project_name = 'HappyUser/GreatProject')
 create_experiment(name = 'my first experiment')
 log_metric('accuracy', 0.92)
 stop_experiment()

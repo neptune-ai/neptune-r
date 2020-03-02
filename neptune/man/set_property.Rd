@@ -1,57 +1,50 @@
 \name{set_property}
+
 \alias{set_property}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
-%%  ~~function to do ... ~~
-}
-\description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
-}
-\usage{
-set_property(x)
-}
-%- maybe also 'usage' for other objects documented here.
-\arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
-}
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
+Set a property to Neptune experiment
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
+\description{
+It logs a property:value pair to Neptune Experiment.
+Neptune is a lightweight experiment tracking tool, for more information see <https://neptune.ai/>.
+}
+
+\usage{
+set_property(property = 'data-version', value = 'asd19210u1asd')
+}
+
+\arguments{
+\item{property}{string, a name of the property that you want to log to Neptune}
+\item{value}{string, a value of the property that you want to log to Neptune}
+}
+}
+
+\author{
+\strong{Maintainer}: Jakub Czakon \email{jakub.czakon@neptune.ai}
+
+Authors:
+\itemize{
+  \item Mateusz Dominiak \email{XXX@YYY.com}
+}
+}
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+Useful links:
+\itemize{
+  \item \url{https://neptune.ai/}
+  \item Documentation \url{https://docs.neptune.ai/}
+  \item Report bugs at \url{https://github.com/neptune-ai/neptune-r/issues}
 }
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+}
 
-## The function is currently defined as
-function (x)
-{
-  }
+\examples{
+init_neptune(project_name = 'HappyUser/GreatProject')
+create_experiment(name = 'my first experiment')
+set_property(property = 'data-version', value = 'asd19210u1asd')
+log_metric('accuracy', 0.92)
+stop_experiment()
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+
+\keyword{interface}
