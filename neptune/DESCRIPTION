@@ -1,11 +1,11 @@
 Package: neptune
 Type: Package
-Title: What the Package Does (Title Case)
+Title: R interface to the Neptune.ai experiment tracking and management tool.
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Mateusz Dominiak, Jakub Czakon
+Maintainer: The package maintainer <jakub.czakon@neptune.ai>
+Description: Neptune helps you organize your machine learning experiemnts.
+    You can log your hyperparameter, metrics, model binaries and performance charts,
+    organize them with tags and names and share everything easily in the app.
 Encoding: UTF-8
 LazyData: true
