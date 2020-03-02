@@ -14,8 +14,6 @@ Everything is logged to Neptune and can be:
 * shared 
 * accessed 
 
-![image](https://i0.wp.com/neptune.ai/wp-content/uploads/Screenshot-2020-02-18-at-15.43.23.png?resize=1024%2C892&ssl=1)
-
 **Keep the knowledge in one place, organized and ready to be shared with anyone.**
 
 ![image](https://gist.githubusercontent.com/jakubczakon/f754769a39ea6b8fa9728ede49b9165c/raw/2f3a5577ac55595e8b9241d81a2de43a0fc663db/wiki.png)
