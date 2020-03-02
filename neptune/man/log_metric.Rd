@@ -40,7 +40,8 @@ Useful links:
 }
 
 \examples{
-init_neptune(project_name = 'HappyUser/GreatProject')
+set_neptune_token(token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vdWkubmVwdHVuZS5haSIsImFwaV9rZXkiOiJiNzA2YmM4Zi03NmY5LTRjMmUtOTM5ZC00YmEwMzZmOTMyZTQifQ==')
+init_neptune(project_name = 'shared/r-integration')
 create_experiment(name = 'my first experiment'
                   params = list(metric='Accuracy', model='rf', 'cvFolds'=2)
 )
@@ -48,6 +49,7 @@ log_metric('accuracy', 0.92)
 log_metric('accuracy', 0.52)
 log_metric('auc', 0.87)
 stop_experiment()
+# link to a neptune experiment
 }
 
 \keyword{interface}

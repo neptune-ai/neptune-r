@@ -39,12 +39,14 @@ Useful links:
 }
 
 \examples{
-init_neptune(project_name = 'HappyUser/GreatProject')
+set_neptune_token(token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vdWkubmVwdHVuZS5haSIsImFwaV9rZXkiOiJiNzA2YmM4Zi03NmY5LTRjMmUtOTM5ZC00YmEwMzZmOTMyZTQifQ==')
+init_neptune(project_name = 'shared/r-integration')
 create_experiment(name = 'my first experiment')
 log_image(name = 'performance charts', filename = 'roc_auc.png')
 log_image(name = 'performance charts', filename = 'confusion_matrix.png')
 log_image(name = 'prediction charts', filename = 'example_predictions.png')
 stop_experiment()
+# link to a neptune experiment
 }
 
 \keyword{interface}

@@ -38,10 +38,12 @@ Useful links:
 }
 
 \examples{
-init_neptune(project_name = 'HappyUser/GreatProject')
+set_neptune_token(token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vdWkubmVwdHVuZS5haSIsImFwaV9rZXkiOiJiNzA2YmM4Zi03NmY5LTRjMmUtOTM5ZC00YmEwMzZmOTMyZTQifQ==')
+init_neptune(project_name = 'shared/r-integration')
 create_experiment(name = 'my first experiment')
 log_artifact(filename = 'model.Rdata')
 stop_experiment()
+# link to a neptune experiment
 }
 
 \keyword{interface}
