@@ -1,10 +1,11 @@
 install_neptune <- function() {
-  if (!require("reticulate"))
+  requireNamespace("reticulate", quietly = T)
+  if (!isNamespaceLoaded("reticulate"))
     stop('couldn\'t load reticulate package')
   reticulate::py_install(packages = 'neptune-client')
   tryCatch({
-    import('psutil')
-  }, function(e){
+    reticulate::import('psutil')
+  }, error = function(e){
     reticulate::py_install(packages = 'psutil')
   })
 }
@@ -16,10 +17,10 @@ init_neptune <- function(project_name,
   if(!is.null(api_token)){
     set_neptune_token(api_token)
   }
-  
-  if (!require("reticulate"))
+  requireNamespace("reticulate", quietly = T)
+  if (!isNamespaceLoaded("reticulate"))
     stop('couldn\'t load reticulate package')
-  
+
   if(!is.null(python)){
     switch (python,
             python = reticulate::use_python(python = python_path, required = T),
@@ -31,11 +32,11 @@ init_neptune <- function(project_name,
   }
 
   tryCatch({
-    neptune <- import("neptune")
+    neptune <- reticulate::import("neptune")
   }, error = function(e) {
     print('couldn\'t import neptune client. Trying to install')
     install_neptune()
-    neptune <- import("neptune")
+    neptune <- reticulate::import("neptune")
   })
   options(neptune = neptune)
 
@@ -51,7 +52,7 @@ get_neptune <- function() {
   return(ret)
 }
 
-set_neptune_token <- function(token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBz') {
+set_neptune_token <- function(token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vdWkubmVwdHVuZS5haSIsImFwaV9rZXkiOiJiNzA2YmM4Zi03NmY5LTRjMmUtOTM5ZC00YmEwMzZmOTMyZTQifQ==') {
   Sys.setenv('NEPTUNE_API_TOKEN' = token)
 }
 
