@@ -12,11 +12,18 @@ Neptune is a lightweight experiment tracking tool, for more information see <htt
 }
 
 \usage{
-init_neptune(project_name = 'HappyUser/GreatProject')
+init_neptune(api_token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vdWkubmVwdHVuZS5haSIsImFwaV9rZXkiOiJiNzA2YmM4Zi03NmY5LTRjMmUtOTM5ZC00YmEwMzZmOTMyZTQifQ==',
+             project_name = 'shared/r-integration',
+             python = 'minicondaconda',
+             python_path = '/home/marry/miniconda3/bin/python')
 }
 
 \arguments{
 \item{project_name}{string, a name of the project in Neptune. Remember it is 'USERNAME/PROJECT_NAME'}
+\item{api_token}{string, your Neptune API token that you can copy from your Neptune account}
+\item{python}{string, environemnt type. Can be one of 'python', 'conda', 'miniconda', and 'venv'}
+\item{python_path}{string, path to your python distribution. For exmaple  if you selected
+python ='miniconda' you can have an example python_path = `/home/marry/miniconda3/bin/python'}
 }
 
 \author{
@@ -37,12 +44,14 @@ Useful links:
 }
 
 \examples{
-set_neptune_token(token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vdWkubmVwdHVuZS5haSIsImFwaV9rZXkiOiJiNzA2YmM4Zi03NmY5LTRjMmUtOTM5ZC00YmEwMzZmOTMyZTQifQ==')
-init_neptune(project_name = 'shared/r-integration')create_experiment(name = 'my first experiment')
-log_metric('
-ccuracy', 0.92)
+init_neptune(api_token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vdWkubmVwdHVuZS5haSIsImFwaV9rZXkiOiJiNzA2YmM4Zi03NmY5LTRjMmUtOTM5ZC00YmEwMzZmOTMyZTQifQ==',
+             project_name = 'shared/r-integration',
+             python = 'minicondaconda',
+             python_path = '/home/marry/miniconda3/bin/python')
+create_experiment(name = 'my first experiment')
+log_metric('accuracy', 0.92)
 stop_experiment()
-# link to a neptune experiment
+# See an example experiment here https://ui.neptune.ai/o/shared/org/r-integration/e/RIN-56/logs
 }
 
 \keyword{interface}
