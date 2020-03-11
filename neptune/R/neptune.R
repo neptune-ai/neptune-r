@@ -10,9 +10,26 @@ install_neptune <- function() {
 }
 
 init_neptune <- function(project_name,
-                        api_token = Sys.getenv('NEPTUNE_API_TOKEN')) {
+                        api_token = NULL,
+                        python = NULL,
+                        python_path) {
+  if(!is.null(api_token)){
+    set_neptune_token(api_token)
+  }
+  
   if (!require("reticulate"))
     stop('couldn\'t load reticulate package')
+  
+  if(!is.null(python)){
+    switch (python,
+            python = reticulate::use_python(python = python_path, required = T),
+            conda = reticulate::use_condaenv(condaenv = python_path, required = T),
+            miniconda = reticulate::use_miniconda(condaenv = python_path, required = T),
+            venv = reticulate::use_virtualenv(virtualenv = python_path, required = T),
+            stop('Invalid python argument, should be one of [python, conda, miniconda, venv]')
+    )
+  }
+
   tryCatch({
     neptune <- import("neptune")
   }, error = function(e) {
@@ -23,8 +40,7 @@ init_neptune <- function(project_name,
   options(neptune = neptune)
 
   return(
-    neptune$init(project_qualified_name = project_name,
-                 api_token = api_token)
+    neptune$init(project_qualified_name = project_name)
   )
 }
 
