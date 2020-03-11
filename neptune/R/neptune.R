@@ -1,4 +1,12 @@
 install_neptune <- function() {
+  if (!require("reticulate"))
+    stop('couldn\'t load reticulate package')
+  reticulate::py_install(packages = 'neptune-client')
+  tryCatch({
+    import('psutil')
+  }, function(e){
+    reticulate::py_install(packages = 'psutil')
+  })
 }
 
 init_neptune <- function(project_name,
@@ -8,11 +16,11 @@ init_neptune <- function(project_name,
   tryCatch({
     neptune <- import("neptune")
   }, error = function(e) {
-    warning('couldn\'t import neptune client. Trying to install')
-    reticulate::py_install('neptune-client')
+    print('couldn\'t import neptune client. Trying to install')
+    install_neptune()
     neptune <- import("neptune")
   })
-  options('neptune') <- neptune
+  options(neptune = neptune)
 
   return(
     neptune$init(project_qualified_name = project_name,
@@ -36,7 +44,7 @@ stop_experiment <- function() {
 }
 
 create_experiment <- function(name = 'default',
-                             params = list(),
+                             params = reticulate::dict(),
                              tags = c()) {
   get_neptune()$create_experiment(name = name,
                                  params = params,
