@@ -17,12 +17,12 @@ init_neptune(project_name,
             python = NULL,
             python_path)
 }
-
 \arguments{
 \item{project_name}{string, a name of the project in Neptune. Remember it is 'USERNAME/PROJECT_NAME'}
-\item{api_token}{string, your Neptune API token that you can copy from your Neptune account, NULL if token is already set in a 'NEPTUNE_API_TOKEN' environment variable}
-\item{python}{string, either python, conda, miniconda or venv. Decides which python to use for reticulate. Leave as NULL if reticulate is set up before calling init_neptune}
-\item{python_path}{string, path to python or virtual enviroment or conda env name}
+\item{api_token}{string, your Neptune API token that you can copy from your Neptune account}
+\item{python}{string, environemnt type. Can be one of 'python', 'conda', 'miniconda', and 'venv'}
+\item{python_path}{string, path to your python distribution. For exmaple  if you selected
+python ='miniconda' you can have an example python_path = `/home/marry/miniconda3/bin/python'}
 }
 
 \author{
@@ -49,7 +49,7 @@ init_neptune(project_name = 'shared/r-integration', python='miniconda', python_p
 create_experiment(name = 'my first experiment')
 log_metric('accuracy', 0.92)
 stop_experiment()
-# link to a neptune experiment
+# See an example experiment here https://ui.neptune.ai/o/shared/org/r-integration/e/RIN-56/logs
 }
 
 \keyword{interface}

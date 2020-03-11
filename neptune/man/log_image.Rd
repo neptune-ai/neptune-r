@@ -46,7 +46,7 @@ log_image(name = 'performance charts', filename = 'roc_auc.png')
 log_image(name = 'performance charts', filename = 'confusion_matrix.png')
 log_image(name = 'prediction charts', filename = 'example_predictions.png')
 stop_experiment()
-# link to a neptune experiment
+# See an example experiment here https://ui.neptune.ai/o/shared/org/r-integration/e/RIN-56/logs
 }
 
 \keyword{interface}

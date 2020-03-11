@@ -38,7 +38,7 @@ set_neptune_token(token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vdWkubmVwdHVuZS5haSIsI
 init_neptune(project_name = 'shared/r-integration', python='miniconda', python_path='r-reticulate')
 get_neptune()$log_metric('auc', 0.45)
 get_neptune()$stop()
-# link to a neptune experiment
+# See an example experiment here https://ui.neptune.ai/o/shared/org/r-integration/e/RIN-56/logs
 }
 
 \keyword{interface}

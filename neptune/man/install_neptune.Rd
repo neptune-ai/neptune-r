@@ -7,7 +7,7 @@ Install Neptune client
 }
 
 \description{
-Instructions for installing neptune client package.
+Instructions for installing neptune client package into your Python environemnt.
 Neptune is a lightweight experiment tracking tool, for more information see <https://neptune.ai/>.
 }
 

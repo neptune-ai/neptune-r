@@ -43,7 +43,7 @@ init_neptune(project_name = 'shared/r-integration', python='miniconda', python_p
 create_experiment(name = 'my first experiment')
 log_artifact(filename = 'model.Rdata')
 stop_experiment()
-# link to a neptune experiment
+# See an example experiment here https://ui.neptune.ai/o/shared/org/r-integration/e/RIN-56/logs
 }
 
 \keyword{interface}

@@ -45,7 +45,7 @@ create_experiment(name = 'my first experiment')
 set_property(property = 'data-version', value = 'asd19210u1asd')
 log_metric('accuracy', 0.92)
 stop_experiment()
-# link to a neptune experiment
+# See an example experiment here https://ui.neptune.ai/o/shared/org/r-integration/e/RIN-56/logs
 }
 
 \keyword{interface}

@@ -49,7 +49,7 @@ log_metric('accuracy', 0.92)
 log_metric('accuracy', 0.52)
 log_metric('auc', 0.87)
 stop_experiment()
-# link to a neptune experiment
+# See an example experiment here https://ui.neptune.ai/o/shared/org/r-integration/e/RIN-56/logs
 }
 
 \keyword{interface}

@@ -45,7 +45,7 @@ create_experiment(name = 'my first experiment')
 append_tag('resnet50')
 append_tag(c('no-augmentation', 'focal-loss'))
 stop_experiment()
-# link to neptune experiment
+# See an example experiment here https://ui.neptune.ai/o/shared/org/r-integration/e/RIN-56/logs
 }
 
 \keyword{interface}
