@@ -12,7 +12,7 @@ Neptune is a lightweight experiment tracking tool, for more information see <htt
 }
 
 \usage{
-log_metric('accuracy', 0.92)
+log_metric(metric, value)
 }
 
 \arguments{
@@ -39,12 +39,20 @@ Useful links:
 }
 
 \examples{
-init_neptune(api_token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vdWkubmVwdHVuZS5haSIsImFwaV9rZXkiOiJiNzA2YmM4Zi03NmY5LTRjMmUtOTM5ZC00YmEwMzZmOTMyZTQifQ==',
-             project_name = 'shared/r-integration')
-create_experiment(name = 'my first experiment')
+tryCatch(reticulate::install_miniconda(), error=function(e) print('miniconda already installed'))
+
+# We are using api token for an anonymous user neptuner. For other projects use your private api token.
+init_neptune(api_token = 'ANONYMOUS', project_name = 'shared/r-integration', python='miniconda', python_path='r-reticulate')
+
+# Start logging
+create_experiment(name = 'my first experiment',
+                  params = list(metric='Accuracy', model='rf', 'cvFolds'=2)
+)
 log_metric('accuracy', 0.92)
 log_metric('accuracy', 0.52)
 log_metric('auc', 0.87)
+
+# Stop logging
 stop_experiment()
 # See an example experiment here https://ui.neptune.ai/o/shared/org/r-integration/e/RIN-56/logs
 }

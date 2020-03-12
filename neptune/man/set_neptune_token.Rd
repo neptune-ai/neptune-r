@@ -37,11 +37,17 @@ Useful links:
 }
 
 \examples{
-install_neptune()
+tryCatch(reticulate::install_miniconda(), error=function(e) print('miniconda already installed'))
+
+# We are using api token for an anonymous user neptuner. For other projects use your private api token.
 set_neptune_token(token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vdWkubmVwdHVuZS5haSIsImFwaV9rZXkiOiJiNzA2YmM4Zi03NmY5LTRjMmUtOTM5ZC00YmEwMzZmOTMyZTQifQ==')
-init_neptune(project_name = 'shared/r-integration')
+init_neptune(project_name = 'shared/r-integration', python='miniconda', python_path='r-reticulate')
+
+# Start logging
 create_experiment(name = 'my first experiment')
 log_metric('accuracy', 0.92)
+
+# Stop logging
 stop_experiment()
 # See an example experiment here https://ui.neptune.ai/o/shared/org/r-integration/e/RIN-56/logs
 }
