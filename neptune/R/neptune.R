@@ -17,9 +17,6 @@ init_neptune <- function(project_name,
     set_neptune_token(api_token)
   }
   
-  if (!require("reticulate"))
-    stop('couldn\'t load reticulate package')
-  
   if(!is.null(python)){
     switch (python,
             python = reticulate::use_python(python = python_path, required = T),
