@@ -41,7 +41,8 @@ init_neptune <- function(project_name,
   options(neptune = neptune)
 
   return(
-    neptune$init(project_qualified_name = project_name)
+    suppressWarnings(reticulate::py_suppress_warnings(neptune$init(project_qualified_name = project_name,
+                                                                   api_token=Sys.getenv('NEPTUNE_API_TOKEN'))))
   )
 }
 
@@ -54,6 +55,9 @@ get_neptune <- function() {
 
 set_neptune_token <- function(token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vdWkubmVwdHVuZS5haSIsImFwaV9rZXkiOiJiNzA2YmM4Zi03NmY5LTRjMmUtOTM5ZC00YmEwMzZmOTMyZTQifQ==') {
   Sys.setenv('NEPTUNE_API_TOKEN' = token)
+  reticulate::py_run_string(code = paste0(
+    'import os; os.environ["NEPTUNE_API_TOKEN"] = "',token,'"'
+  ))
 }
 
 stop_experiment <- function() {

@@ -45,9 +45,13 @@ init_neptune(api_token = 'ANONYMOUS', project_name = 'shared/r-integration', pyt
 
 # Start logging
 create_experiment(name = 'my first experiment')
-log_image(name = 'performance charts', filename = 'roc_auc.png')
-log_image(name = 'performance charts', filename = 'confusion_matrix.png')
-log_image(name = 'prediction charts', filename = 'example_predictions.png')
+
+
+png(filename = "testPlot.png", width = 480, height = 480)
+plot(1:10, type = 'l')
+dev.off()
+
+log_image(name = 'performance charts', filename = 'testPlot.png')
 
 # Stop logging
 stop_experiment()

@@ -44,7 +44,11 @@ init_neptune(api_token = 'ANONYMOUS', project_name = 'shared/r-integration', pyt
 
 # Start logging
 create_experiment(name = 'my first experiment')
-log_artifact(filename = 'model.Rdata')
+
+file = tempfile()
+x=1:10
+save(x, file=file)
+log_artifact(filename = file)
 
 # Stop logging
 stop_experiment()

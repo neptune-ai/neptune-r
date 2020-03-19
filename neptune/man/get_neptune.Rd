@@ -41,6 +41,9 @@ init_neptune(api_token = 'ANONYMOUS', project_name = 'shared/r-integration', pyt
 # Fetch Neptune logger object
 npt = get_neptune()
 
+# Create experiment
+npt$create_experiment(name = 'my first experiment')
+
 # Start logging
 npt$log_metric('auc', 0.45)
 
