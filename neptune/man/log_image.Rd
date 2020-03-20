@@ -38,6 +38,7 @@ Useful links:
 }
 
 \examples{
+\dontrun{
 tryCatch(reticulate::install_miniconda(), error=function(e) print('miniconda already installed'))
 
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
@@ -59,6 +60,7 @@ log_image(name = 'performance charts', filename = 'testPlot.png')
 # Stop logging
 stop_experiment()
 # See an example experiment here https://ui.neptune.ai/o/shared/org/r-integration/e/RIN-56/logs
+}
 }
 
 \keyword{interface}
