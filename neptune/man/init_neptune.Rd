@@ -18,7 +18,7 @@ init_neptune(project_name,
             python_path)
 }
 \arguments{
-\item{project_name}{string, a name of the project in Neptune. Remember it is 'USERNAME/PROJECT_NAME'}
+\item{project_name}{string, a name of the project in Neptune. Has a format 'USERNAME/PROJECT_NAME'}
 \item{api_token}{string, your Neptune API token that you can copy from your Neptune account}
 \item{python}{string, environemnt type. Can be one of 'python', 'conda', 'miniconda', and 'venv'}
 \item{python_path}{string, path to your python distribution. For exmaple  if you selected
@@ -45,7 +45,7 @@ Useful links:
 \examples{
 tryCatch(reticulate::install_miniconda(), error=function(e) print('miniconda already installed'))
 
-# We are using api token for an anonymous user neptuner. For other projects use your private api token.
+# We are using api token for an anonymous user neptuner. For your projects use your private token.
 init_neptune(api_token = 'ANONYMOUS',
              project_name = 'shared/r-integration',
              python='miniconda',

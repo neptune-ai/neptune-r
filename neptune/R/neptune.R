@@ -53,7 +53,7 @@ get_neptune <- function() {
   return(ret)
 }
 
-set_neptune_token <- function(token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vdWkubmVwdHVuZS5haSIsImFwaV9rZXkiOiJiNzA2YmM4Zi03NmY5LTRjMmUtOTM5ZC00YmEwMzZmOTMyZTQifQ==') {
+set_neptune_token <- function(token) {
   Sys.setenv('NEPTUNE_API_TOKEN' = token)
   reticulate::py_run_string(code = paste0(
     'import os; os.environ["NEPTUNE_API_TOKEN"] = "',token,'"'

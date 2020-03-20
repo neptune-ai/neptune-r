@@ -7,7 +7,8 @@ Create Neptune experiment
 }
 
 \description{
-It create a Neptune experiment to which you can log hyperparameters, metrics, images, or other artifacts.
+It create a Neptune experiment to which you can log hyperparameters,
+metrics, images, or other artifacts.
 Neptune is a lightweight experiment tracking tool, for more information see <https://neptune.ai/>.
 }
 
@@ -20,8 +21,10 @@ create_experiment(name = "default",
 
 \arguments{
 \item{name}{string, a name of Neptune experiment, by default set to 'default'}
-\item{params}{list (or reticulate::dict), named list of name-value pairs used to define experiment parameters}
-\item{tags}{tags, array of tags used to organize experiments. Good examples are 'preprocessing-v1' or 'resnet50'}
+\item{params}{list (or reticulate::dict), named list of name-value pairs.
+Used to define experiment parameters}
+\item{tags}{tags, array of tags used to organize experiments.
+Good examples are 'preprocessing-v1' or 'resnet50'}
 }
 
 \author{
@@ -44,7 +47,7 @@ Useful links:
 \examples{
 tryCatch(reticulate::install_miniconda(), error=function(e) print('miniconda already installed'))
 
-# We are using api token for an anonymous user neptuner. For other projects use your private api token.
+# We are using api token for an anonymous user neptuner. For your projects use your private token.
 init_neptune(api_token = 'ANONYMOUS',
              project_name = 'shared/r-integration',
              python='miniconda',
