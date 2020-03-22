@@ -18,3 +18,4 @@ Encoding: UTF-8
 LazyData: true
 SystemRequirements: Neptune (https://neptune.ai/)
 Imports: reticulate
+SystemRequirements: Python (>= 3.0.0) 
