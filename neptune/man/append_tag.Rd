@@ -4,12 +4,12 @@
 \alias{append_tag}
 
 \title{
-Append tag to Neptune experiment
+Append tag to 'Neptune' experiment
 }
 
 \description{
-Append a tag or array of tags to a Neptune experiment.
-Neptune is a lightweight experiment tracking tool, for more information see <https://neptune.ai/>.
+Append a tag or array of tags to a 'Neptune' experiment.
+'Neptune' is a lightweight experiment tracking tool, for more information see <https://neptune.ai/>.
 }
 
 \usage{
@@ -17,7 +17,7 @@ append_tag(tag)
 }
 
 \arguments{
-\item{tag}{string or array of strings, a tag or array of tags that you want to append to an experiment}
+\item{tag}{string or array of strings, a tag or array of tags that you want to attach}
 }
 
 \author{
@@ -38,13 +38,10 @@ Useful links:
 }
 
 \examples{
-tryCatch(reticulate::install_miniconda(), error=function(e) print('miniconda already installed'))
-
-# We are using api token for an anonymous user neptuner. For other projects use your private api token.
+\dontrun{
+# We are using api token for an anonymous user neptuner. For your projects use your private token.
 init_neptune(api_token = 'ANONYMOUS',
-             project_name = 'shared/r-integration',
-             python='miniconda',
-             python_path='r-reticulate')
+             project_name = 'shared/r-integration')
 
 # Start logging
 create_experiment(name = 'my first experiment')
@@ -54,6 +51,7 @@ append_tag(c('no-augmentation', 'focal-loss'))
 # Stop logging
 stop_experiment()
 # See an example experiment here https://ui.neptune.ai/o/shared/org/r-integration/e/RIN-56/logs
+}
 }
 
 \keyword{interface}

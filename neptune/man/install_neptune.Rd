@@ -3,12 +3,12 @@
 \alias{install_neptune}
 
 \title{
-Install Neptune client
+Install 'Neptune' client
 }
 
 \description{
-Instructions for installing neptune client package into your Python environemnt.
-Neptune is a lightweight experiment tracking tool, for more information see <https://neptune.ai/>.
+Instructions for installing 'Neptune' client package into your Python environemnt.
+'Neptune' is a lightweight experiment tracking tool, for more information see <https://neptune.ai/>.
 }
 
 \usage{
@@ -33,9 +33,9 @@ Useful links:
 }
 
 \examples{
-tryCatch(reticulate::install_miniconda(), error=function(e) print('miniconda already installed'))
-reticulate::use_miniconda()
+\dontrun{
 install_neptune()
+}
 }
 
 \keyword{interface}
