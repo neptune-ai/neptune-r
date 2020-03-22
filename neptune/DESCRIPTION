@@ -1,6 +1,6 @@
 Package: neptune
 Type: Package
-Title: Interface to the Neptune.ai experiment tracking and management tool
+Title: Interface to the Neptune.ai Experiment Tracking and Management Tool
 Version: 0.1.0
 Authors@R: c(
   person("Mateusz", "Dominiak", role = c("aut")),
