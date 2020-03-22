@@ -39,23 +39,19 @@ Useful links:
 
 \examples{
 \dontrun{
-tryCatch(reticulate::install_miniconda(), error=function(e) print('miniconda already installed'))
-
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
 init_neptune(api_token = 'ANONYMOUS',
-             project_name = 'shared/r-integration',
-             python='miniconda',
-             python_path='r-reticulate')
+             project_name = 'shared/r-integration')
 
 # Start logging
 create_experiment(name = 'my first experiment')
 
-
-png(filename = "testPlot.png", width = 480, height = 480)
+f <- tempfile()
+png(filename = f, width = 480, height = 480)
 plot(1:10, type = 'l')
 dev.off()
 
-log_image(name = 'performance charts', filename = 'testPlot.png')
+log_image(name = 'performance charts', filename = f)
 
 # Stop logging
 stop_experiment()

@@ -1,5 +1,5 @@
 install_neptune <- function() {
-  requireNamespace("reticulate", quietly = T)
+  requireNamespace("reticulate", quietly = TRUE)
   if (!isNamespaceLoaded("reticulate"))
     stop('couldn\'t load reticulate package')
   reticulate::py_install(packages = 'neptune-client')
@@ -17,16 +17,16 @@ init_neptune <- function(project_name,
   if(!is.null(api_token)){
     set_neptune_token(api_token)
   }
-  requireNamespace("reticulate", quietly = T)
+  requireNamespace("reticulate", quietly = TRUE)
   if (!isNamespaceLoaded("reticulate"))
     stop('couldn\'t load reticulate package')
 
   if(!is.null(python)){
     switch (python,
-            python = reticulate::use_python(python = python_path, required = T),
-            conda = reticulate::use_condaenv(condaenv = python_path, required = T),
-            miniconda = reticulate::use_miniconda(condaenv = python_path, required = T),
-            venv = reticulate::use_virtualenv(virtualenv = python_path, required = T),
+            python = reticulate::use_python(python = python_path, required = TRUE),
+            conda = reticulate::use_condaenv(condaenv = python_path, required = TRUE),
+            miniconda = reticulate::use_miniconda(condaenv = python_path, required = TRUE),
+            venv = reticulate::use_virtualenv(virtualenv = python_path, required = TRUE),
             stop('Invalid python argument, should be one of [python, conda, miniconda, venv]')
     )
   }
@@ -34,7 +34,7 @@ init_neptune <- function(project_name,
   tryCatch({
     neptune <- reticulate::import("neptune")
   }, error = function(e) {
-    print('couldn\'t import neptune client. Trying to install')
+    message('couldn\'t import neptune client. Trying to install')
     install_neptune()
     neptune <- reticulate::import("neptune")
   })
@@ -55,9 +55,6 @@ get_neptune <- function() {
 
 set_neptune_token <- function(token) {
   Sys.setenv('NEPTUNE_API_TOKEN' = token)
-  reticulate::py_run_string(code = paste0(
-    'import os; os.environ["NEPTUNE_API_TOKEN"] = "',token,'"'
-  ))
 }
 
 stop_experiment <- function() {

@@ -34,8 +34,6 @@ Useful links:
 
 \examples{
 \dontrun{
-tryCatch(reticulate::install_miniconda(), error=function(e) print('miniconda already installed'))
-reticulate::use_miniconda()
 install_neptune()
 }
 }
