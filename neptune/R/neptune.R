@@ -63,10 +63,12 @@ stop_experiment <- function() {
 
 create_experiment <- function(name = 'default',
                              params = reticulate::dict(),
-                             tags = c()) {
+                             tags = c(),
+                             upload_source_files = c()) {
   get_neptune()$create_experiment(name = name,
                                  params = params,
-                                 tags = tags)
+                                 tags = tags,
+                                 upload_source_files = upload_source_files)
 }
 
 append_tag <- function(tag) {
