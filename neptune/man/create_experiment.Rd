@@ -15,7 +15,8 @@ metrics, images, or other artifacts.
 \usage{
 create_experiment(name = "default",
                   params = reticulate::dict(),
-                  tags =  c()
+                  tags =  c(),
+                  upload_source_files = c()
 )
 }
 
@@ -25,6 +26,8 @@ create_experiment(name = "default",
 Used to define experiment parameters}
 \item{tags}{tags, array of tags used to organize experiments.
 Good examples are 'preprocessing-v1' or 'resnet50'}
+\item{upload_source_files}{list of file patterns, array of filepaths and file patterns that you would like to upload to Neptune.
+Good examples are 'train_model.r' or '*/**.r'}
 }
 
 \author{
@@ -63,4 +66,3 @@ stop_experiment()
 }
 
 \keyword{interface}
-

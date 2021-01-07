@@ -54,6 +54,3 @@ npt$stop()
 }
 
 \keyword{interface}
-
-
-

@@ -60,5 +60,3 @@ stop_experiment()
 }
 
 \keyword{interface}
-
-
