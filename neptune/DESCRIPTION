@@ -1,7 +1,7 @@
 Package: neptune
 Type: Package
 Title: Interface to 'Neptune' Experiment Tracking and Management Tool
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
   person("Mateusz", "Dominiak", role = c("aut")),
   person("Jakub", "Czakon", email = "jakub.czakon@neptune.ai", role = c("aut","cre"))

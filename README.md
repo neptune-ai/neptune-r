@@ -128,9 +128,7 @@ log_artifact(filename = 'model.Rdata')
 If you get stuck, don't worry we are here to help.
 The best order of communication is:
 
- * [neptune documentation](https://docs.neptune.ai)
+ * [neptune documentation](https://docs.neptune.ai/getting-started/getting-help.html#chat)
  * [github issues](https://github.com/neptune-ai/neptune-client/issues)
- * [neptune community forum](https://community.neptune.ai/)
- * [neptune community spectrum](https://spectrum.chat/neptune-community?tab=posts)
 
 
