@@ -29,7 +29,7 @@ python ='miniconda' you can have an example python_path = `/home/marry/miniconda
 Authors:
 \itemize{
   \item Mateusz Dominiak
-  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+  \item Maintainer: Jakub Czakon \email{maintainers@neptune.ai}
 }
 }
 

@@ -25,7 +25,7 @@ You can log more than one value to the same metric. If you do that, a chart will
 Authors:
 \itemize{
   \item Mateusz Dominiak
-  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+  \item Maintainer: Jakub Czakon \email{maintainers@neptune.ai}
 }
 }
 
