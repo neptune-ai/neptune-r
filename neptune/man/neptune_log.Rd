@@ -1,62 +1,40 @@
 \name{neptune_log}
 \alias{neptune_log}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-  todo
+Logs the provided number or a collection of numbers.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Logs the provided number or a collection of numbers.
 }
 \usage{
-neptune_log(x, value)
+neptune_log(run['loss'], 0.1)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
-}
-  \item{value}{
-%%     ~~Describe \code{value} here~~
-}
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
+  \item{x}{Neptune handler, for which we want to log value}
+  \item{value}{(numeric or integer, or vector of numerics or integers) - The value to be logged or collections of values to be logged.}
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
+None
 }
 \author{
-%%  ~~who you are~~
+Authors:
+\itemize{
+  \item Mateusz Dominiak
+  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
 }
-\note{
-%%  ~~further notes~~
 }
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+Useful links:
+\itemize{
+  \item \url{https://neptune.ai/}
+  \item Documentation \url{https://docs.neptune.ai/}
+  \item Report bugs at \url{https://github.com/neptune-ai/neptune-r/issues}
 }
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (x, value) 
-{
-    check_handler(x)
-    x$log(value)
-  }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\dontrun{
+# We are using api token for an anonymous user neptuner. For your projects use your private token.
+run <- neptune_init(api_token = 'ANONYMOUS',
+                    project = 'shared/r-integration')
+neptune_log(run['loss'], 0.1)
+}
+\keyword{interface}

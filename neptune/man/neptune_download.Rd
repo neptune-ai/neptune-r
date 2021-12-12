@@ -1,62 +1,46 @@
 \name{neptune_download}
 \alias{neptune_download}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-  todo
+Downloads all the files that are referenced in the field.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Downloads all the files that are referenced in the field.
 }
 \usage{
-neptune_download(x, path)
+neptune_download(run['artifacts/images'], destination='datasets/train/images')
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
-}
-  \item{path}{
-%%     ~~Describe \code{path} here~~
-}
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
+  \item{x}{Neptune handler, for which we want to fetch the value}
+  \item{destination}{(str , optional, default is None) - The directory where the files will be downloaded. If None is passed, the files will be downloaded to the current working directory.
+
+If destination is a directory, the file will be downloaded to the specified directory with a filename composed from field name and extension (if present).
+
+If destination is a path to a file, the file will be downloaded under the specified name.}
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
+None
 }
 \author{
-%%  ~~who you are~~
+Authors:
+\itemize{
+  \item Mateusz Dominiak
+  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
 }
-\note{
-%%  ~~further notes~~
 }
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+Useful links:
+\itemize{
+  \item \url{https://neptune.ai/}
+  \item Documentation \url{https://docs.neptune.ai/}
+  \item Report bugs at \url{https://github.com/neptune-ai/neptune-r/issues}
 }
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (x, path) 
-{
-    check_handler(x)
-    x$download(path)
-  }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\dontrun{
+# We are using api token for an anonymous user neptuner. For your projects use your private token.
+run <- neptune_init(api_token = 'ANONYMOUS',
+                    project = 'shared/r-integration',
+                    run='AR-2', # Neptune Run ID of a run with artifact
+                    mode='read-only')
+neptune_download(run['artifacts/images'], destination='datasets/train/images')
+}
+\keyword{interface}

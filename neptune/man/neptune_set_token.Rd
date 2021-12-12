@@ -30,7 +30,11 @@ neptune_set_token(token)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Authors:
+\itemize{
+  \item Mateusz Dominiak
+  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+}
 }
 \note{
 %%  ~~further notes~~
@@ -47,12 +51,9 @@ neptune_set_token(token)
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (token) 
+function (token)
 {
     Sys.setenv(NEPTUNE_API_TOKEN = token)
   }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{interface}

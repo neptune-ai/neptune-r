@@ -54,7 +54,11 @@ neptune_install(method = c("auto", "virtualenv", "conda"), conda = "auto", versi
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Authors:
+\itemize{
+  \item Mateusz Dominiak
+  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+}
 }
 \note{
 %%  ~~further notes~~
@@ -71,10 +75,10 @@ neptune_install(method = c("auto", "virtualenv", "conda"), conda = "auto", versi
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (method = c("auto", "virtualenv", "conda"), conda = "auto", 
-    version = "default", envname = NULL, extra_packages = c("psutil"), 
-    restart_session = TRUE, conda_python_version = "3.7", ..., 
-    python_version = conda_python_version) 
+function (method = c("auto", "virtualenv", "conda"), conda = "auto",
+    version = "default", envname = NULL, extra_packages = c("psutil"),
+    restart_session = TRUE, conda_python_version = "3.7", ...,
+    python_version = conda_python_version)
 {
     if (.Machine$sizeof.pointer != 8) {
         stop("Unable to install Neptune on this platform.", "Binary installation is only available for 64-bit platforms.")
@@ -82,33 +86,30 @@ function (method = c("auto", "virtualenv", "conda"), conda = "auto",
     method <- match.arg(method)
     if (is_windows()) {
         method <- "conda"
-        have_conda <- !is.null(tryCatch(conda_binary(conda), 
+        have_conda <- !is.null(tryCatch(conda_binary(conda),
             error = function(e) NULL))
         if (!have_conda) {
-            stop("Neptune installation failed (no conda binary found)\n\n", 
-                "Install Miniconda by running `reticulate::install_miniconda()` or ", 
-                "install Anaconda for Python 3.x (https://www.anaconda.com/download/#windows) ", 
+            stop("Neptune installation failed (no conda binary found)\n\n",
+                "Install Miniconda by running `reticulate::install_miniconda()` or ",
+                "install Anaconda for Python 3.x (https://www.anaconda.com/download/#windows) ",
                 "before installing Neptune\n", call. = FALSE)
         }
         if (py_available()) {
-            stop("You should call install_keras() only in a fresh ", 
-                "R session that has not yet initialized Neptune (this is ", 
+            stop("You should call install_keras() only in a fresh ",
+                "R session that has not yet initialized Neptune (this is ",
                 "to avoid DLL in use errors during installation)")
         }
     }
     packages <- unique(c(parse_neptune_version(version), as.character(extra_packages)))
     packages <- shQuote(gsub("[\"']", "", packages))
-    reticulate::py_install(packages = packages, envname = envname, 
-        method = method, conda = conda, python_version = python_version, 
+    reticulate::py_install(packages = packages, envname = envname,
+        method = method, conda = conda, python_version = python_version,
         pip = TRUE, ...)
     cat("\nInstallation complete.\n\n")
-    if (restart_session && requireNamespace("rstudioapi", quietly = TRUE) && 
-        rstudioapi::hasFun("restartSession")) 
+    if (restart_session && requireNamespace("rstudioapi", quietly = TRUE) &&
+        rstudioapi::hasFun("restartSession"))
         rstudioapi::restartSession()
     invisible(NULL)
   }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{interface}

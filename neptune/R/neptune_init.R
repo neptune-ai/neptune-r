@@ -1,6 +1,7 @@
 neptune_init <-
-function (project,
+function (project=NULL,
             api_token = NULL,
+            run = NULL,
             python = NULL,
             python_path,
             source_files = NULL,
@@ -10,9 +11,6 @@ function (project,
     }
     if (is.null(source_files) & !interactive()) {
       source_files <- c(this.path::this.path())
-    }
-    if (!is.null(api_token)) {
-      neptune_set_token(api_token)
     }
     requireNamespace("reticulate", quietly = TRUE)
     if (!isNamespaceLoaded("reticulate"))
@@ -34,11 +32,12 @@ function (project,
       )
     }
     neptune <- get_neptune()
-    
+
     run <- suppressWarnings(reticulate::py_suppress_warnings(
       neptune$init(
         project = project,
-        api_token = Sys.getenv("NEPTUNE_API_TOKEN"),
+        api_token = api_token,
+        run = run,
         mode = connection_mode,
         source_files = source_files
       )

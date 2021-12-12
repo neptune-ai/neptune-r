@@ -1,5 +1,5 @@
 neptune_download <-
-function(x, path) {
+function(x, destination=NULL) {
   check_handler(x)
-  x$download(path)
+  x$download(destination)
 }

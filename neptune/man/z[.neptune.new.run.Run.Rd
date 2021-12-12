@@ -33,7 +33,11 @@
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Authors:
+\itemize{
+  \item Mateusz Dominiak
+  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+}
 }
 \note{
 %%  ~~further notes~~
@@ -50,12 +54,9 @@
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (x, i) 
+function (x, i)
 {
     reticulate::py_get_item(x, i)
   }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{interface}

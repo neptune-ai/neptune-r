@@ -2,10 +2,10 @@
 \alias{neptune_init}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-  todo
+Starts a new tracked run, and append it to the top of the Runs table view.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Starts a new tracked run, and append it to the top of the Runs table view. All parameters are optional, hence minimal invocation: run <- neptune_init().
 }
 \usage{
 neptune_init(project, api_token = NULL, python = NULL, python_path, source_files = NULL, connection_mode = "async")
@@ -13,91 +13,55 @@ neptune_init(project, api_token = NULL, python = NULL, python_path, source_files
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{project}{
-%%     ~~Describe \code{project} here~~
+(str, optional, default is NULL) – Name of a project in a form of namespace/project_name. If NULL, the value of NEPTUNE_PROJECT environment variable will be taken.
 }
   \item{api_token}{
-%%     ~~Describe \code{api_token} here~~
+(str, optional, default is NULL) – User’s API token. If NULL, the value of NEPTUNE_API_TOKEN environment variable will be taken.
+Note: It is strongly recommended to use NEPTUNE_API_TOKEN environment variable rather than placing your API token in plain text in your source code.
 }
-  \item{python}{
-%%     ~~Describe \code{python} here~~
+  \item{run}{
+(str, optional, default is NULL) – An existing run's identifier like'SAN-1' in case of resuming a tracked run. A run with such identifier must exist. If NULL is passed, starts a new tracked run. See Resume run guide.
+}
+\item{python}{
+(str) - one of python, conda, miniconda, venv. Specifies which type of python's backend should be used.
 }
   \item{python_path}{
-%%     ~~Describe \code{python_path} here~~
+(str) - path to python executable.
 }
   \item{source_files}{
-%%     ~~Describe \code{source_files} here~~
+(list or str, optional, default is NULL) – List of source files to be uploaded. Must be list of str or single str. Uploaded sources are displayed in the run’s Source code tab.
+
+If NULL is passed, for non-interactive sessions the R script from which the method is called will be uploaded.
+
+Unix style pathname pattern expansion is supported. For example, you can pass '*.py' to upload all python source files from the current directory. For Python 3.5 or later, paths of uploaded files on server are resolved as relative to the calculated common root of all uploaded source files. For older Python versions, paths on server are resolved always as relative to the current directory. For recursion lookup use '**/*.py' (for Python 3.5 and later). For more information see glob library.
 }
   \item{connection_mode}{
-%%     ~~Describe \code{connection_mode} here~~
+(str, optional, default is 'async') – Connection mode in which the tracking will work. Possible values "async", "sync", "offline", and "debug", "read-only". See Connection modes guide.
 }
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
+Run object that is used to manage the tracked run and log metadata to it.
 }
 \author{
-%%  ~~who you are~~
+Authors:
+\itemize{
+  \item Mateusz Dominiak
+  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
 }
-\note{
-%%  ~~further notes~~
 }
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+Useful links:
+\itemize{
+  \item \url{https://neptune.ai/}
+  \item Documentation \url{https://docs.neptune.ai/}
+  \item Report bugs at \url{https://github.com/neptune-ai/neptune-r/issues}
+}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (project, api_token = NULL, python = NULL, python_path, 
-    source_files = NULL, connection_mode = "async") 
-{
-    if (!(connection_mode \%in\% c("async", "sync", "offline", 
-        "debug"))) {
-        stop("connection_mode must be one of \"async\", \"sync\", \"offline\", \"debug\"")
-    }
-    if (is.null(source_files) & !interactive()) {
-        source_files <- c(this.path::this.path())
-    }
-    if (!is.null(api_token)) {
-        neptune_set_token(api_token)
-    }
-    requireNamespace("reticulate", quietly = TRUE)
-    if (!isNamespaceLoaded("reticulate")) 
-        stop("couldn't load reticulate package")
-    if (!is.null(python)) {
-        switch(python, python = reticulate::use_python(python = python_path, 
-            required = TRUE), conda = reticulate::use_condaenv(condaenv = python_path, 
-            required = TRUE), miniconda = reticulate::use_miniconda(condaenv = python_path, 
-            required = TRUE), venv = reticulate::use_virtualenv(virtualenv = python_path, 
-            required = TRUE), stop("Invalid python argument, should be one of [python, conda, miniconda, venv]"))
-    }
-    neptune <- get_neptune()
-    run <- suppressWarnings(reticulate::py_suppress_warnings(neptune$init(project = project, 
-        api_token = Sys.getenv("NEPTUNE_API_TOKEN"), mode = connection_mode, 
-        source_files = source_files)))
-    on.exit(tryCatch({
-    }, error = function(e) {
-        warning(paste0("Failed to stop neptune experiment: ", 
-            str(e)))
-    }))
-    return(run)
-  }
+\dontrun{
+# We are using api token for an anonymous user neptuner. For your projects use your private token.
+run <- neptune_init(api_token = 'ANONYMOUS',
+                    project = 'shared/r-integration')
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+}
+\keyword{interface}
