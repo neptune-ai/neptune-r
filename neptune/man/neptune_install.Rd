@@ -1,57 +1,53 @@
 \name{neptune_install}
 \alias{neptune_install}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-  todo
+  Install neptune-client along with required python enviroment.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+\code{neptune_install()} installs just the neptune-client python package and it's
+direct dependencies..
 }
 \usage{
 neptune_install(method = c("auto", "virtualenv", "conda"), conda = "auto", version = "default", envname = NULL, extra_packages = c("psutil"), restart_session = TRUE, conda_python_version = "3.7", ..., python_version = conda_python_version)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{method}{
-%%     ~~Describe \code{method} here~~
+Installation method. By default, "auto" automatically finds a method that will work in the local environment. Change the default to force a specific installation method. Note that the "virtualenv" method is not available on Windows.
 }
   \item{conda}{
-%%     ~~Describe \code{conda} here~~
+The path to a conda executable. Use "auto" to allow reticulate to automatically find an appropriate conda binary. See Finding Conda for more details.
 }
   \item{version}{
-%%     ~~Describe \code{version} here~~
+Neptune-client version to install. Valid values include:
+   +  `"default"` installs  `r default_version`
+
+   + `"release"` installs the latest release version of tensorflow (which may
+   be incompatible with the current version of the R package)
+
+   + A version specification like `"2.4"` or `"2.4.0"`. Note that if the patch
+   version is not supplied, the latest patch release is installed (e.g.,
+   `"2.4"` today installs version "2.4.2")
+
+   + The full URL or path to a installer binary or python *.whl file.
+
 }
   \item{envname}{
-%%     ~~Describe \code{envname} here~~
+The name, or full path, of the environment in which Python packages are to be installed. When NULL (the default), the active environment as set by the RETICULATE_PYTHON_ENV variable will be used; if that is unset, then the r-reticulate environment will be used.
 }
   \item{extra_packages}{
-%%     ~~Describe \code{extra_packages} here~~
+Additional Python packages to install along with Neptune
 }
   \item{restart_session}{
-%%     ~~Describe \code{restart_session} here~~
+Restart R session after installing (note this will only occur within RStudio).
 }
   \item{conda_python_version}{
-%%     ~~Describe \code{conda_python_version} here~~
+python_version,conda_python_version the python version installed in the created conda environment. Ignored when attempting to install with a Python virtual environment.
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+other arguments passed to [reticulate::conda_install()] or [reticulate::virtualenv_install()], depending on the `method` used. Accepts `pip_ignore_installed=TRUE`.
 }
   \item{python_version}{
-%%     ~~Describe \code{python_version} here~~
-}
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
+The requested Python version. Ignored when attempting to install with a Python virtual environment.
 }
 \author{
 Authors:
@@ -60,56 +56,17 @@ Authors:
   \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
 }
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+Useful links:
+\itemize{
+  \item \url{https://neptune.ai/}
+  \item Documentation \url{https://docs.neptune.ai/}
+  \item Report bugs at \url{https://github.com/neptune-ai/neptune-r/issues}
+}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (method = c("auto", "virtualenv", "conda"), conda = "auto",
-    version = "default", envname = NULL, extra_packages = c("psutil"),
-    restart_session = TRUE, conda_python_version = "3.7", ...,
-    python_version = conda_python_version)
-{
-    if (.Machine$sizeof.pointer != 8) {
-        stop("Unable to install Neptune on this platform.", "Binary installation is only available for 64-bit platforms.")
-    }
-    method <- match.arg(method)
-    if (is_windows()) {
-        method <- "conda"
-        have_conda <- !is.null(tryCatch(conda_binary(conda),
-            error = function(e) NULL))
-        if (!have_conda) {
-            stop("Neptune installation failed (no conda binary found)\n\n",
-                "Install Miniconda by running `reticulate::install_miniconda()` or ",
-                "install Anaconda for Python 3.x (https://www.anaconda.com/download/#windows) ",
-                "before installing Neptune\n", call. = FALSE)
-        }
-        if (py_available()) {
-            stop("You should call install_keras() only in a fresh ",
-                "R session that has not yet initialized Neptune (this is ",
-                "to avoid DLL in use errors during installation)")
-        }
-    }
-    packages <- unique(c(parse_neptune_version(version), as.character(extra_packages)))
-    packages <- shQuote(gsub("[\"']", "", packages))
-    reticulate::py_install(packages = packages, envname = envname,
-        method = method, conda = conda, python_version = python_version,
-        pip = TRUE, ...)
-    cat("\nInstallation complete.\n\n")
-    if (restart_session && requireNamespace("rstudioapi", quietly = TRUE) &&
-        rstudioapi::hasFun("restartSession"))
-        rstudioapi::restartSession()
-    invisible(NULL)
-  }
+\dontrun{
+neptune_install()
+}
 }
 \keyword{interface}

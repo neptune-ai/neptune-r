@@ -1,36 +1,24 @@
 \name{[.neptune.new.run.Run}
 \alias{[.neptune.new.run.Run}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-  todo
+Get field's value.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Get field's value.
 }
 \usage{
-[.neptune.new.run.Run(x, i)
+x["i"]
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+  Neptune Run object
 }
   \item{i}{
-%%     ~~Describe \code{i} here~~
+  string, name of the field to set
 }
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
+Neptune field handler
 }
 \author{
 Authors:
@@ -39,24 +27,28 @@ Authors:
   \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
 }
 }
-\note{
-%%  ~~further notes~~
+\author{
+Authors:
+\itemize{
+  \item Mateusz Dominiak
+  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
 }
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
+}
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+Useful links:
+\itemize{
+  \item \url{https://neptune.ai/}
+  \item Documentation \url{https://docs.neptune.ai/}
+  \item Report bugs at \url{https://github.com/neptune-ai/neptune-r/issues}
+}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (x, i)
-{
-    reticulate::py_get_item(x, i)
-  }
+\dontrun{
+# We are using api token for an anonymous user neptuner. For your projects use your private token.
+run <- neptune_init(api_token = 'ANONYMOUS',
+                    project = 'shared/r-integration')
+run['epochs'] <- 100
+run['epochs']
+}
 }
 \keyword{interface}

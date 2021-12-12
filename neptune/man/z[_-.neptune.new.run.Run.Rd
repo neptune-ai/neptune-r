@@ -1,39 +1,28 @@
 \name{[<-.neptune.new.run.Run}
 \alias{[<-.neptune.new.run.Run}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-  todo
+Assigns the provided value to the field.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Assigns the provided value to the field.
 }
 \usage{
-[<-.neptune.new.run.Run(x, i, value)
+x["i"] <- value
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+  Neptune Run object
 }
   \item{i}{
-%%     ~~Describe \code{i} here~~
+  string, name of the field to set
 }
   \item{value}{
-%%     ~~Describe \code{value} here~~
+  value which is assigned to field
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
+None
 }
 \author{
 Authors:
@@ -42,30 +31,27 @@ Authors:
   \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
 }
 }
-\note{
-%%  ~~further notes~~
+\author{
+Authors:
+\itemize{
+  \item Mateusz Dominiak
+  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
 }
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
+}
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+Useful links:
+\itemize{
+  \item \url{https://neptune.ai/}
+  \item Documentation \url{https://docs.neptune.ai/}
+  \item Report bugs at \url{https://github.com/neptune-ai/neptune-r/issues}
+}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (x, i, value)
-{
-    if (is.null(value)) {
-        reticulate::py_del_item(x = x, name = i)
-    }
-    else {
-        reticulate::py_set_item(x = x, name = i, value = value)
-    }
-    x
-  }
+\dontrun{
+# We are using api token for an anonymous user neptuner. For your projects use your private token.
+run <- neptune_init(api_token = 'ANONYMOUS',
+                    project = 'shared/r-integration')
+run['epochs'] <- 100
+}
 }
 \keyword{interface}
