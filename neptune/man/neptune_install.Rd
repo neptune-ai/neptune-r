@@ -8,7 +8,15 @@
 direct dependencies..
 }
 \usage{
-neptune_install(method = c("auto", "virtualenv", "conda"), conda = "auto", version = "default", envname = NULL, extra_packages = c("psutil"), restart_session = TRUE, conda_python_version = "3.7", ..., python_version = conda_python_version)
+neptune_install(method = c("auto", "virtualenv", "conda"),
+  conda = "auto",
+  version = "default",
+  envname = NULL,
+  extra_packages = c("psutil"),
+  restart_session = TRUE,
+  conda_python_version = "3.7",
+  ...,
+  python_version = conda_python_version)
 }
 \arguments{
   \item{method}{
@@ -48,6 +56,7 @@ other arguments passed to [reticulate::conda_install()] or [reticulate::virtuale
 }
   \item{python_version}{
 The requested Python version. Ignored when attempting to install with a Python virtual environment.
+}
 }
 \author{
 Authors:

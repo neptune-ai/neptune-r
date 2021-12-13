@@ -7,7 +7,7 @@ Logs the provided number or a collection of numbers.
 Logs the provided number or a collection of numbers.
 }
 \usage{
-neptune_log(run['loss'], 0.1)
+neptune_log(x, value)
 }
 \arguments{
   \item{x}{Neptune handler, for which we want to log value}
@@ -31,10 +31,12 @@ Useful links:
   \item Report bugs at \url{https://github.com/neptune-ai/neptune-r/issues}
 }
 }
+\examples{
 \dontrun{
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
 run <- neptune_init(api_token = 'ANONYMOUS',
                     project = 'shared/r-integration')
 neptune_log(run['loss'], 0.1)
+}
 }
 \keyword{interface}

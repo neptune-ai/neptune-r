@@ -1,33 +1,23 @@
 \name{neptune_file_as_image}
 \alias{neptune_file_as_image}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-  todo
+  Static method for converting image objects or image-like objects to an image File value object.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  Static method for converting image objects or image-like objects to an image File value object. This way you can upload Matplotlib figures, PIL images, NumPy arrays, as static images.
 }
 \usage{
 neptune_file_as_image(x)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+An object to be converted. Supported are Altair, Bokeh, Plotly, Matplotlib interactive charts, and Pandas DataFrame objects.
+R matrices must be converted to numpy arrays via reticulate::np_array
+R dataframes are automatically converted to Pandas
 }
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
+None
 }
 \author{
 Authors:
@@ -36,24 +26,21 @@ Authors:
   \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
 }
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+Useful links:
+\itemize{
+  \item \url{https://neptune.ai/}
+  \item Documentation \url{https://docs.neptune.ai/}
+  \item Report bugs at \url{https://github.com/neptune-ai/neptune-r/issues}
+}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (x)
-{
-    reticulate::import("neptune.new.types")$File$as_image(x)
-  }
+\dontrun{
+# We are using api token for an anonymous user neptuner. For your projects use your private token.
+run <- neptune_init(api_token = 'ANONYMOUS',
+                    project = 'shared/r-integration')
+image <- matrix(runif(16*16), nrow = 16)
+neptune_log(run['test/sample_images'], neptune_file_as_image(reticulate::np_array(image)))
+}
 }
 \keyword{interface}

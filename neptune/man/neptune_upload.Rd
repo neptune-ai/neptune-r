@@ -1,36 +1,24 @@
 \name{neptune_upload}
 \alias{neptune_upload}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-  todo
+Uploads provided file under specified field path
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Uploads provided file under specified field path
 }
 \usage{
 neptune_upload(x, value)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+Neptune handler
 }
   \item{value}{
-%%     ~~Describe \code{value} here~~
+string - Path to the file to be uploaded
 }
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
+None
 }
 \author{
 Authors:
@@ -39,25 +27,20 @@ Authors:
   \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
 }
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+Useful links:
+\itemize{
+  \item \url{https://neptune.ai/}
+  \item Documentation \url{https://docs.neptune.ai/}
+  \item Report bugs at \url{https://github.com/neptune-ai/neptune-r/issues}
+}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (x, value)
-{
-    check_handler(x)
-    x$upload(value)
-  }
+\dontrun{
+# We are using api token for an anonymous user neptuner. For your projects use your private token.
+run <- neptune_init(api_token = 'ANONYMOUS',
+                    project = 'shared/r-integration')
+neptune_upload(run['model'], "model.RData")
+}
 }
 \keyword{interface}

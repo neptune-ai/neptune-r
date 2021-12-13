@@ -1,33 +1,36 @@
 \name{neptune_fetch_runs}
 \alias{neptune_fetch_runs}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-  todo
+  Retrieve runs matching the specified criteria.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Retrieve runs matching the specified criteria.
+All parameters are optional, each of them specifies a single criterion. Only runs matching all of the criteria will be returned.
+Due to technical limitation only first 10,000 runs matching the criteria are fetched.
 }
 \usage{
-neptune_fetch_runs(project)
+neptune_fetch_runs(project, id = NULL, state = NULL, owner = NULL, tag = NULL)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{project}{
-%%     ~~Describe \code{project} here~~
+string - project name
 }
+  \item{id}{
+(string or vector of strings, optional, default is NULL) - A run's id like "SAN-1" or list of ids like c("SAN-1", "SAN-2").
+Matching any element of the list is sufficient to pass the criterion.
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
+  \item{state}{
+(string or vector of strings, optional, default is NULL) - A run's state like "active" or list of states like c("inactive", "active"). Possible values: "inactive", "active".
+Matching any element of the list is sufficient to pass the criterion.}
+  \item{owner}{
+(string or vector of strings, optional, default is NULL) - Username of the run's owner (the user who created the tracked run is an owner) like "josh" or a list of owners like c("frederic", "josh").
+Matching any element of the list is sufficient to pass the criterion.}
+  \item{tag}{
+(string or vector of strings, optional, default is NULL) - An experiment tag like "lightGBM" or list of tags like c("pytorch", "cycleLR").
+Only experiments that have all specified tags will match this criterion.}
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
+RunsTable data in the form of DataFrame.
 }
 \author{
 Authors:
@@ -36,24 +39,20 @@ Authors:
   \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
 }
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+Useful links:
+\itemize{
+  \item \url{https://neptune.ai/}
+  \item Documentation \url{https://docs.neptune.ai/}
+  \item Report bugs at \url{https://github.com/neptune-ai/neptune-r/issues}
+}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (project)
-{
-    get_neptune()$neptune$get_project(project)$fetch_runs_table()$to_pandas()
-  }
+\dontrun{
+# We are using api token for an anonymous user neptuner. For your projects use your private token.
+run <- neptune_init(api_token = 'ANONYMOUS',
+                    project = 'shared/r-integration')
+df <- neptune_fetch_runs('shared/r-integration')
+}
 }
 \keyword{interface}

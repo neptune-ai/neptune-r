@@ -7,7 +7,7 @@ Downloads all the files that are referenced in the field.
 Downloads all the files that are referenced in the field.
 }
 \usage{
-neptune_download(run['artifacts/images'], destination='datasets/train/images')
+neptune_download(x, destination)
 }
 \arguments{
   \item{x}{Neptune handler, for which we want to fetch the value}
@@ -35,6 +35,7 @@ Useful links:
   \item Report bugs at \url{https://github.com/neptune-ai/neptune-r/issues}
 }
 }
+\examples{
 \dontrun{
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
 run <- neptune_init(api_token = 'ANONYMOUS',
@@ -42,5 +43,6 @@ run <- neptune_init(api_token = 'ANONYMOUS',
                     run='AR-2', # Neptune Run ID of a run with artifact
                     mode='read-only')
 neptune_download(run['artifacts/images'], destination='datasets/train/images')
+}
 }
 \keyword{interface}

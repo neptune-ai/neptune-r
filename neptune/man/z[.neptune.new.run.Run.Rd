@@ -1,13 +1,10 @@
 \name{[.neptune.new.run.Run}
 \alias{[.neptune.new.run.Run}
 \title{
-Get field's value.
+Get metadata Neptune handler.
 }
 \description{
-Get field's value.
-}
-\usage{
-x["i"]
+Get metadata Neptune handler.
 }
 \arguments{
   \item{x}{
@@ -18,14 +15,7 @@ x["i"]
 }
 }
 \value{
-Neptune field handler
-}
-\author{
-Authors:
-\itemize{
-  \item Mateusz Dominiak
-  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
-}
+Neptune handler
 }
 \author{
 Authors:

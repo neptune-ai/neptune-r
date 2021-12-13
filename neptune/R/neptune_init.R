@@ -45,7 +45,7 @@ function (project=NULL,
     on.exit(tryCatch({
       #run$stop()
     }, error = function(e) {
-      warning(paste0("Failed to stop neptune experiment: ", str(e)))
+      warning(paste0("Failed to stop neptune experiment: ", as.character(e)))
     }))
     return(run)
   }

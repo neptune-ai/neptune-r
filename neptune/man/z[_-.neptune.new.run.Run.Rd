@@ -6,9 +6,6 @@ Assigns the provided value to the field.
 \description{
 Assigns the provided value to the field.
 }
-\usage{
-x["i"] <- value
-}
 \arguments{
   \item{x}{
   Neptune Run object
@@ -20,16 +17,8 @@ x["i"] <- value
   value which is assigned to field
 }
 }
-
 \value{
 None
-}
-\author{
-Authors:
-\itemize{
-  \item Mateusz Dominiak
-  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
-}
 }
 \author{
 Authors:

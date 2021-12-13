@@ -1,33 +1,21 @@
 \name{neptune_set_token}
 \alias{neptune_set_token}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-  todo
+  Sets NEPTUNE_API_TOKEN environment variables
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  Sets NEPTUNE_API_TOKEN environment variables. It is used as a default api_token value by neptune_init.
 }
 \usage{
 neptune_set_token(token)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{token}{
-%%     ~~Describe \code{token} here~~
+string - Your Neptune API token
 }
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
+None
 }
 \author{
 Authors:
@@ -36,24 +24,15 @@ Authors:
   \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
 }
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+Useful links:
+\itemize{
+  \item \url{https://neptune.ai/}
+  \item Documentation \url{https://docs.neptune.ai/}
+  \item Report bugs at \url{https://github.com/neptune-ai/neptune-r/issues}
+}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (token)
-{
-    Sys.setenv(NEPTUNE_API_TOKEN = token)
-  }
+neptune_set_token("ANONYMOUS")
 }
 \keyword{interface}

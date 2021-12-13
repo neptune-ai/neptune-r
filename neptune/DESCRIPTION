@@ -17,4 +17,4 @@ BugReports: https://github.com/neptune-ai/neptune-r/issues
 Encoding: UTF-8
 LazyData: true
 SystemRequirements: Python (>= 3.0.0), Neptune (https://neptune.ai/)
-Imports: reticulate
+Imports: reticulate (>= 1.22), this.path (>= 0.4.4), rstudioapi (>= 0.7)

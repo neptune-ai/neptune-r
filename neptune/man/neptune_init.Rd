@@ -8,7 +8,13 @@ Starts a new tracked run, and append it to the top of the Runs table view.
 Starts a new tracked run, and append it to the top of the Runs table view. All parameters are optional, hence minimal invocation: run <- neptune_init().
 }
 \usage{
-neptune_init(project, api_token = NULL, python = NULL, python_path, source_files = NULL, connection_mode = "async")
+neptune_init(project = NULL,
+  api_token = NULL,
+  run = NULL,
+  python = NULL,
+  python_path,
+  source_files = NULL,
+  connection_mode = "async")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
