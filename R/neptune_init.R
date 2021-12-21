@@ -5,9 +5,9 @@ function (project=NULL,
             python = NULL,
             python_path,
             source_files = NULL,
-            connection_mode = "async"){
-    if (!(connection_mode %in% c("async", "sync", "offline", "debug"))) {
-      stop('connection_mode must be one of "async", "sync", "offline", "debug"')
+          mode = "async"){
+    if (!(mode %in% c("async", "sync", "offline", "debug"))) {
+      stop('mode must be one of "async", "sync", "offline", "debug"')
     }
     if (is.null(source_files) & !interactive()) {
       source_files <- c(this.path::this.path())
@@ -38,7 +38,7 @@ function (project=NULL,
         project = project,
         api_token = api_token,
         run = run,
-        mode = connection_mode,
+        mode = mode,
         source_files = source_files
       )
     ))

@@ -7,11 +7,12 @@ Logs the provided number or a collection of numbers.
 Logs the provided number or a collection of numbers.
 }
 \usage{
-neptune_log(x, value)
+neptune_log(x, value, step=NULL)
 }
 \arguments{
   \item{x}{Neptune handler, for which we want to log value}
   \item{value}{(numeric or integer, or vector of numerics or integers) - The value to be logged or collections of values to be logged.}
+  \item{step}{(numeric or integer) - Index of the log entry being appended. Must be strictly increasing.}
 }
 \value{
 None

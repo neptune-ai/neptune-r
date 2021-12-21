@@ -11,7 +11,7 @@ neptune_file_as_image(x)
 }
 \arguments{
   \item{x}{
-An object to be converted. Supported are Altair, Bokeh, Plotly, Matplotlib interactive charts, and Pandas DataFrame objects.
+In docs there is Image-like object to be converted. Supported are PyTorch tensors, TensorFlow/Keras tensors, NumPy arrays, PIL images, Matplotlib figures.
 R matrices must be converted to numpy arrays via reticulate::np_array
 R dataframes are automatically converted to Pandas
 }

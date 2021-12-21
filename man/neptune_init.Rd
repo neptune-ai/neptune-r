@@ -14,7 +14,7 @@ neptune_init(project = NULL,
   python = NULL,
   python_path,
   source_files = NULL,
-  connection_mode = "async")
+  mode = "async")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -41,7 +41,7 @@ If NULL is passed, for non-interactive sessions the R script from which the meth
 
 Unix style pathname pattern expansion is supported. For example, you can pass '*.py' to upload all python source files from the current directory. For Python 3.5 or later, paths of uploaded files on server are resolved as relative to the calculated common root of all uploaded source files. For older Python versions, paths on server are resolved always as relative to the current directory. For recursion lookup use '**/*.py' (for Python 3.5 and later). For more information see glob library.
 }
-  \item{connection_mode}{
+  \item{mode}{
 (str, optional, default is 'async') – Connection mode in which the tracking will work. Possible values "async", "sync", "offline", and "debug", "read-only". See Connection modes guide.
 }
 }
