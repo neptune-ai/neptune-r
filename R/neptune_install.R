@@ -24,7 +24,7 @@ function(method = c("auto", "virtualenv", "conda"),
     method <- "conda"
     
     # confirm we actually have conda - let reticulate prompt miniconda installation
-    have_conda <- !is.null(tryCatch(conda_binary(conda), error = function(e) NULL))
+    have_conda <- !is.null(tryCatch(reticulate::conda_binary(conda), error = function(e) NULL))
     if (!have_conda) {
       stop("Neptune installation failed (no conda binary found)\n\n",
            "Install Miniconda by running `reticulate::install_miniconda()` or ",

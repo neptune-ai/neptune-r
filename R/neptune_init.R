@@ -1,11 +1,11 @@
 neptune_init <-
-function (project=NULL,
+  function (project = NULL,
             api_token = NULL,
             run = NULL,
             python = NULL,
             python_path,
             source_files = NULL,
-          mode = "async"){
+            mode = "async") {
     if (!(mode %in% c("async", "sync", "offline", "debug"))) {
       stop('mode must be one of "async", "sync", "offline", "debug"')
     }
@@ -32,7 +32,7 @@ function (project=NULL,
       )
     }
     neptune <- get_neptune()
-
+    
     run <- suppressWarnings(reticulate::py_suppress_warnings(
       neptune$init(
         project = project,

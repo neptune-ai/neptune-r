@@ -14,7 +14,7 @@ neptune_upload(x, value)
 Neptune handler
 }
   \item{value}{
-string - Path to the file to be uploaded
+string - Path to the file to be uploaded or File value object eg. object returned by neptune_file_as_html call
 }
 }
 \value{
