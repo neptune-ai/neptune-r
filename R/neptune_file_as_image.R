@@ -3,10 +3,8 @@ neptune_file_as_image <-
     if ("ggplot" %in% class(x)) {
       pth <- paste0(tempfile(), '.png')
       ggplot2::ggsave(x, filename = pth)
-      npt_file <- neptune$types$File(path = pth)
       file_ <-
         reticulate::import("neptune.new.types")$File(path = pth)
-      file.remove(pth)
       return(file_)
     }
     reticulate::import("neptune.new.types")$File$as_image(x)

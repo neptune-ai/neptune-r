@@ -36,7 +36,8 @@
 }
 \examples{
   \dontrun{
-    # We are using api token for an anonymous user neptuner. For your projects use your private token.
+    # We are using api token for an anonymous user neptuner. 
+    # For your projects use your private token.
     run <- neptune_init(api_token = 'ANONYMOUS',
                         project = 'shared/r-integration')
     neptune_wait(run)
