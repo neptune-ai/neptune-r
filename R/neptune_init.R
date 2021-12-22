@@ -42,10 +42,14 @@ neptune_init <-
         source_files = source_files
       )
     ))
-    on.exit(tryCatch({
-      #run$stop()
-    }, error = function(e) {
-      warning(paste0("Failed to stop neptune experiment: ", as.character(e)))
-    }))
+    env_ <- new.env()
+    env_$run <- run
+    reg.finalizer(env_, function(x)
+      tryCatch({
+        x$run$stop()
+      }, error = function(e) {
+        warning(paste0("Failed to stop neptune experiment: ", as.character(e)))
+      }), onexit=T)
+    
     return(run)
   }
