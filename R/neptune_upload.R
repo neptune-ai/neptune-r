@@ -1,5 +1,5 @@
 neptune_upload <-
-function(x, value) {
+function(x, value, wait=FALSE) {
   check_handler(x)
-  x$upload(value)
+  x$upload(value, wait=wait)
 }

@@ -1,5 +1,5 @@
 neptune_remove <-
-function(x, value) {
+function(x, values, wait=FALSE) {
   check_handler(x)
-  x$remove(value)
+  x$remove(values, wait=wait)
 }

@@ -7,7 +7,7 @@ Uploads provided file under specified field path
 Uploads provided file under specified field path
 }
 \usage{
-neptune_upload(x, value)
+neptune_upload(x, value, wait=FALSE)
 }
 \arguments{
   \item{x}{
@@ -16,6 +16,7 @@ Neptune handler
   \item{value}{
 string - Path to the file to be uploaded or File value object eg. object returned by neptune_file_as_html call
 }
+\item{wait}{bool - If True the client will wait to send all tracked metadata to the server before making the assignment. This makes the call synchronous.}
 }
 \value{
 None
