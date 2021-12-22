@@ -4,7 +4,7 @@
   Static method for converting image objects or image-like objects to an image File value object.
 }
 \description{
-  Static method for converting image objects or image-like objects to an image File value object. This way you can upload Matplotlib figures, PIL images, NumPy arrays, as static images.
+  Static method for converting image objects or image-like objects to an image File value object. This way you can upload ggplot2 objects, Matplotlib figures, PIL images, NumPy arrays, as static images.
 }
 \usage{
 neptune_file_as_image(x)

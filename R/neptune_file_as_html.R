@@ -1,4 +1,26 @@
 neptune_file_as_html <-
-function(x){
-  reticulate::import("neptune.new.types")$File$as_html(x)
-}
+  function(x) {
+    if ("ggplot" %in% class(x)) {
+      pth <- paste0(tempfile(), '.html')
+      htmlwidgets::saveWidget(as_widget(ggplotly(x)),
+                              selfcontained = TRUE,
+                              file = pth)
+      npt_file <- neptune$types$File(path = pth)
+      file_ <-
+        reticulate::import("neptune.new.types")$File(path = pth)
+      file.remove(pth)
+      return(file_)
+    }
+    if ("plotly" %in% class(x)) {
+      pth <- paste0(tempfile(), '.html')
+      htmlwidgets::saveWidget(as_widget(x),
+                              selfcontained = TRUE,
+                              file = pth)
+      npt_file <- neptune$types$File(path = pth)
+      file_ <-
+        reticulate::import("neptune.new.types")$File(path = pth)
+      file.remove(pth)
+      return(file_)
+    }
+    reticulate::import("neptune.new.types")$File$as_html(x)
+  }

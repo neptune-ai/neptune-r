@@ -4,7 +4,7 @@
   Converts an object to an HTML File value object.
 }
 \description{
-  Converts an object to an HTML File value object. This way you can upload Altair, Bokeh, Plotly, Matplotlib interactive charts or upload directly Pandas DataFrame objects to explore them in Neptune UI.
+  Converts an object to an HTML File value object. This way you can upload ggplot2, Plotly, Altair, Bokeh, Matplotlib interactive charts or upload directly DataFrame objects to explore them in Neptune UI.
 }
 \usage{
 neptune_file_as_html(x)
