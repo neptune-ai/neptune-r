@@ -10,7 +10,7 @@ Fetches field value from Neptune servers. You should only use .fetch() to copy t
 neptune_fetch(x)
 }
 \arguments{
-  \item{x}{Neptune handler, for which we want to fetch the value}
+  \item{x}{Neptune handler or run, for which we want to fetch the value}
 }
 \value{
 Artifact object

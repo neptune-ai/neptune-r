@@ -1,21 +1,24 @@
-\name{neptune_assign}
-\alias{neptune_assign}
+\name{neptune_sync}
+\alias{neptune_sync}
 \title{
-Assigns the provided value to the field.
+  Synchronizes  of the run with Neptune servers.
 }
 \description{
-Assigns the provided value to the field.
+  Synchronizes  of the run with Neptune servers.
 }
 \usage{
-neptune_assign(x, value, wait=FALSE)
+neptune_sync(run, wait=TRUE)
 }
 \arguments{
-  \item{x}{Neptune handler or run, for which we want to assign the value}
-  \item{value}{Value to be stored in a field.}
-  \item{wait}{bool - If TRUE the client will wait to send all tracked metadata to the server. This makes the call synchronous.}
+  \item{run}{
+Neptune run object.
+  }
+  \item{wait}{
+    logical - If True the client will first wait to send all tracked metadata to the server. This makes the call synchronous, see Connection modes guide.
+  }
 }
 \value{
-None
+  None
 }
 \author{
 Authors:
@@ -37,7 +40,8 @@ Useful links:
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
 run <- neptune_init(api_token = 'ANONYMOUS',
                     project = 'shared/r-integration')
-neptune_assign(run['paramaters'], list(epochs=100, lr=0.01))
+run['lr'] <- 0.001
+neptune_sync(run)
 }
 }
 \keyword{interface}
