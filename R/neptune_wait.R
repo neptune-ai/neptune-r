@@ -1,4 +1,4 @@
-neptune_wait <- function(run){
+neptune_wait <- function(run, disk_only=FALSE){
   check_run(run)
-  run$wait()
+  run$wait(disk_only=disk_only)
 }

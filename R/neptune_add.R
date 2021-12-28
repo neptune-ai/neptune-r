@@ -1,5 +1,5 @@
 neptune_add <-
-function(x, value) {
+function(x, values, wait=FALSE) {
   check_handler(x)
-  x$add(value)
+  x$add(values=values, wait=wait)
 }

@@ -1,11 +1,6 @@
 neptune_log <-
-function(x, value, step=NULL) {
+function(x, value, step=NULL, timestamp=NULL, wait=FALSE) {
   check_handler(x)
-  if ("ggplot" %in% class(value)) {
-    value <- neptune_file_as_image(value)
-  }
-  if ("plotly" %in% class(value)) {
-    value <- neptune_file_as_html(value)
-  }
-  x$log(value, step=step)
+  value <- process_value(value)
+  x$log(value=value, step=step, timestamp=timestamp, wait=wait)
 }

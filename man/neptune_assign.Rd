@@ -11,7 +11,7 @@ neptune_assign(x, value, wait=FALSE)
 }
 \arguments{
   \item{x}{Neptune handler, for which we want to assign the value}
-  \item{value}{string or Artifact  - Value to be stored in a field.}
+  \item{value}{Value to be stored in a field.}
   \item{wait}{bool - If TRUE the client will wait to send all tracked metadata to the server. This makes the call synchronous.}
 }
 \value{

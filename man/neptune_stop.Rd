@@ -7,11 +7,15 @@
   Stop neptune run.
 }
 \usage{
-  neptune_stop(run)
+  neptune_stop(run, seconds=NULL)
 }
 \arguments{
   \item{run}{
     Neptune run object.
+  }
+  \item{seconds}{
+    (integer or numeric, optional, default is NULL) - The method will wait for the specified time for all tracking calls to finish, before stopping the connection. If NULL will wait for all tracking calls to finish.
+
   }
 }
 \value{

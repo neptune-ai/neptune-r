@@ -1,4 +1,4 @@
-neptune_stop <- function(run){
+neptune_stop <- function(run, seconds=NULL){
   check_run(run)
-  run$stop()
+  run$stop(seconds=seconds)
 }

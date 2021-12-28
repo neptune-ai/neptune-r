@@ -9,11 +9,14 @@
   Wait delays the code execution until all the calls are done.
 }
 \usage{
-  neptune_wait(run)
+  neptune_wait(run, disk_only=FALSE)
 }
 \arguments{
   \item{run}{
     Neptune run object.
+  }
+  \item{disk_only}{
+  (Boolean, optional, default is False) - If True the process will only wait for data to be saved locally from memory, but will not wait for them to reach Neptune servers.
   }
 }
 \value{

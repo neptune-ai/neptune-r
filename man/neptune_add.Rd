@@ -7,11 +7,12 @@ Adds the provided tag or tags to the run's tags.
 Adds the provided tag or tags to the run's tags.
 }
 \usage{
-neptune_add(x, value)
+neptune_add(x, values, wait=FALSE)
 }
 \arguments{
-  \item{x}{Neptune handler, for which we want to add tags eg. run['Sys/tags']}
-  \item{value}{string or list of strings - Tag or tags to be added. }
+  \item{x}{Neptune handler, for which we want to add tags eg. run['sys/tags']}
+  \item{values}{string or list of strings - Tag or tags to be added. }
+  \item{wait}{bool - If True the client will wait to send all tracked metadata to the server before making the assignment. This makes the call synchronous.}
 }
 \value{
 None
@@ -36,7 +37,7 @@ Useful links:
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
 run <- neptune_init(api_token = 'ANONYMOUS',
                     project = 'shared/r-integration')
-neptune_add(run['Sys/tags'], 'some_tag')
+neptune_add(run['sys/tags'], 'some_tag')
 }
 }
 \keyword{interface}
