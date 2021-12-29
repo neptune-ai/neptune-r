@@ -1,4 +1,4 @@
-neptune_fetch_runs <- function(project,
+neptune_fetch_runs_table <- function(project,
                                id=NULL,
                                state=NULL,
                                owner=NULL,

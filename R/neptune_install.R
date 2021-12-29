@@ -35,7 +35,7 @@ function(method = c("auto", "virtualenv", "conda"),
     
     # avoid DLL in use errors
     if (py_available()) {
-      stop("You should call install_keras() only in a fresh ",
+      stop("You should call neptune_install() only in a fresh ",
            "R session that has not yet initialized Neptune (this is ",
            "to avoid DLL in use errors during installation)")
     }

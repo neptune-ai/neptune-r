@@ -6,8 +6,8 @@ neptune_init <-
             python_path,
             source_files = NULL,
             mode = "async") {
-    if (!(mode %in% c("async", "sync", "offline", "debug"))) {
-      stop('mode must be one of "async", "sync", "offline", "debug"')
+    if (!(mode %in% c("async", "sync", "offline", "debug", "read-only"))) {
+      stop('mode must be one of "async", "sync", "offline", "debug", "read-only"')
     }
     if (is.null(source_files) & !interactive()) {
       source_files <- c(this.path::this.path())
@@ -48,7 +48,7 @@ neptune_init <-
       tryCatch({
         x$run$stop()
       }, error = function(e) {
-        warning(paste0("Failed to stop neptune experiment: ", as.character(e)))
+        warning(paste0("Failed to stop neptune run: ", as.character(e)))
       }), onexit=T)
     
     return(run)

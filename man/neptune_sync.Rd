@@ -1,10 +1,10 @@
 \name{neptune_sync}
 \alias{neptune_sync}
 \title{
-  Synchronizes  of the run with Neptune servers.
+  Synchronizes the run with with Neptune servers.
 }
 \description{
-  Synchronizes  of the run with Neptune servers.
+  Synchronizes the run with Neptune servers.
 }
 \usage{
 neptune_sync(run, wait=TRUE)

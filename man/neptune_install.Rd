@@ -32,9 +32,8 @@ Neptune-client version to install. Valid values include:
    + `"release"` installs the latest release version of tensorflow (which may
    be incompatible with the current version of the R package)
 
-   + A version specification like `"2.4"` or `"2.4.0"`. Note that if the patch
-   version is not supplied, the latest patch release is installed (e.g.,
-   `"2.4"` today installs version "2.4.2")
+   + A version specification like `"0.9"` or `"0.9.16"`. Note that if the patch
+   version is not supplied, the latest patch release is installed
 
    + The full URL or path to a installer binary or python *.whl file.
 

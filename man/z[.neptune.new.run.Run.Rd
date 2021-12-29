@@ -1,10 +1,12 @@
 \name{[.neptune.new.run.Run}
 \alias{[.neptune.new.run.Run}
 \title{
-Get metadata Neptune handler.
+Field lookup
 }
 \description{
-Get metadata Neptune handler.
+Field lookup.
+You can access any run's field through a named-list-like field lookup run[field_path].
+As well as fetch already tracked metadata - fetching parameters when resuming a run or downloading metadata for a custom analysis using functions like neptune_fetch
 }
 \arguments{
   \item{x}{

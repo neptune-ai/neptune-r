@@ -6,7 +6,7 @@ Authors@R: c(
   person("Mateusz", "Dominiak", role = c("aut")),
   person("Jakub", "Czakon", email = "jakub.czakon@neptune.ai", role = c("aut","cre"))
   )
-Maintainer: Jakub Czakon <jakub.czakon@neptune.ai>
+Maintainer: Neptune DevTeam <backend@neptune.ai>
 Description: Interface to 'Neptune', experiment tracking tool that helps you organize
     your machine learning experiments. You can log your hyperparameter, metrics, model binaries and
     performance charts, organize them with tags and names and share everything easily in the app.
