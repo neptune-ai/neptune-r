@@ -7,7 +7,7 @@ Uploads provided file under specified field path
 Uploads provided file under specified field path
 }
 \usage{
-neptune_upload(x, value, wait=FALSE)
+neptune_upload(x, value, wait=FALSE, ...)
 }
 \arguments{
   \item{x}{
@@ -17,6 +17,7 @@ Neptune handler
 string - Path to the file to be uploaded or File value object eg. object returned by neptune_file_as_html call
 }
 \item{wait}{logical - If TRUE the client will wait to send all tracked metadata to the server before making the assignment. This makes the call synchronous.}
+\item{...}{Other arguments passed on to the ggsave function in case of uploading a ggplot2 object.}
 }
 \value{
 None

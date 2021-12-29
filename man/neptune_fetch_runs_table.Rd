@@ -1,5 +1,5 @@
-\name{neptune_fetch_runs}
-\alias{neptune_fetch_runs}
+\name{neptune_fetch_runs_table}
+\alias{neptune_fetch_runs_table}
 \title{
   Retrieve runs matching the specified criteria.
 }
@@ -9,7 +9,7 @@ All parameters are optional, each of them specifies a single criterion. Only run
 Due to technical limitation only first 10,000 runs matching the criteria are fetched.
 }
 \usage{
-neptune_fetch_runs(project, id = NULL, state = NULL, owner = NULL, tag = NULL)
+neptune_fetch_runs_table(project, id = NULL, state = NULL, owner = NULL, tag = NULL)
 }
 \arguments{
   \item{project}{

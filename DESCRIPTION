@@ -4,7 +4,7 @@ Title: Interface to 'Neptune' Experiment Tracking and Management Tool
 Version: 0.2.0
 Authors@R: c(
   person("Mateusz", "Dominiak", role = c("aut")),
-  person("Jakub", "Czakon", email = "jakub.czakon@neptune.ai", role = c("aut","cre"))
+  person("Neptune DevTeam", email = "backend@neptune.ai", role = c("aut","cre"))
   )
 Maintainer: Neptune DevTeam <backend@neptune.ai>
 Description: Interface to 'Neptune', experiment tracking tool that helps you organize

@@ -7,7 +7,7 @@
   Static method for converting image objects or image-like objects to an image File value object. This way you can upload ggplot2 objects, Matplotlib figures, PIL images, NumPy arrays, as static images.
 }
 \usage{
-neptune_file_as_image(x)
+neptune_file_as_image(x, ...)
 }
 \arguments{
   \item{x}{
@@ -15,6 +15,7 @@ In docs there is Image-like object to be converted. Supported are PyTorch tensor
 R matrices must be converted to numpy arrays via reticulate::np_array
 R dataframes are automatically converted to Pandas
 }
+  \item{...}{Other arguments passed on to the ggsave function}
 }
 \value{
 None
