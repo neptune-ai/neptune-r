@@ -71,7 +71,7 @@ set_neptune_token(token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vdWkubmVwdHVuZS5haSIsI
 Toward the top of your script insert the following snippet.
 
 ```R
-init_neptune(project_name = 'shared/r-integration')
+init_neptune(project_name = "common-r/quickstarts")
 ```
 
 #### Create and stop the experiment

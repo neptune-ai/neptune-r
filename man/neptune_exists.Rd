@@ -19,13 +19,13 @@
   }
 }
 \value{
-  logical - True if field exists at path
+  logical - TRUE if field exists at path
 }
 \author{
   Authors:
     \itemize{
       \item Mateusz Dominiak
-      \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+      \item Maintainer: Neptune DevTeam Dev\email{backend@neptune.ai}
     }
 }
 \seealso{
@@ -41,7 +41,7 @@
     # We are using api token for an anonymous user neptuner. 
     # For your projects use your private token.
     run <- neptune_init(api_token = 'ANONYMOUS',
-                        project = 'shared/r-integration')
+                        project = "common-r/quickstarts")
     run['lr'] <- 0.001
     neptune_exists(run, 'lr')
     neptune_exists(run, 'notlr')

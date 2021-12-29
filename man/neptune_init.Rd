@@ -52,7 +52,7 @@ Run object that is used to manage the tracked run and log metadata to it.
 Authors:
 \itemize{
   \item Mateusz Dominiak
-  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+  \item Maintainer: Neptune DevTeam Dev\email{backend@neptune.ai}
 }
 }
 \seealso{
@@ -67,7 +67,7 @@ Useful links:
 \dontrun{
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
 run <- neptune_init(api_token = 'ANONYMOUS',
-                    project = 'shared/r-integration')
+                    project = "common-r/quickstarts")
 }
 }
 \keyword{interface}

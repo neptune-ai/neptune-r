@@ -12,7 +12,7 @@ neptune_assign(x, value, wait=FALSE)
 \arguments{
   \item{x}{Neptune handler or run, for which we want to assign the value}
   \item{value}{Value to be stored in a field.}
-  \item{wait}{bool - If TRUE the client will wait to send all tracked metadata to the server. This makes the call synchronous.}
+  \item{wait}{logical - If TRUE the client will wait to send all tracked metadata to the server. This makes the call synchronous.}
 }
 \value{
 None
@@ -21,7 +21,7 @@ None
 Authors:
 \itemize{
   \item Mateusz Dominiak
-  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+  \item Maintainer: Neptune DevTeam Dev\email{backend@neptune.ai}
 }
 }
 \seealso{
@@ -36,7 +36,7 @@ Useful links:
 \dontrun{
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
 run <- neptune_init(api_token = 'ANONYMOUS',
-                    project = 'shared/r-integration')
+                    project = "common-r/quickstarts")
 neptune_assign(run['paramaters'], list(epochs=100, lr=0.01))
 }
 }

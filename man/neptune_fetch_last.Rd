@@ -19,7 +19,7 @@
   Authors:
     \itemize{
       \item Mateusz Dominiak
-      \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+      \item Maintainer: Neptune DevTeam Dev\email{backend@neptune.ai}
     }
 }
 \seealso{
@@ -33,7 +33,7 @@
 \examples{
   \dontrun{
     run <- neptune_init(api_token = 'ANONYMOUS',
-                        project = 'shared/r-integration')
+                        project = "common-r/quickstarts")
     last_auc_value <- neptune_fetch_last(run['metrics/auc'])
   }
 }

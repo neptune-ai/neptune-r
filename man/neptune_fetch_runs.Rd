@@ -36,7 +36,7 @@ RunsTable data in the form of DataFrame.
 Authors:
 \itemize{
   \item Mateusz Dominiak
-  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+  \item Maintainer: Neptune DevTeam Dev\email{backend@neptune.ai}
 }
 }
 \seealso{
@@ -51,8 +51,8 @@ Useful links:
 \dontrun{
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
 run <- neptune_init(api_token = 'ANONYMOUS',
-                    project = 'shared/r-integration')
-df <- neptune_fetch_runs('shared/r-integration')
+                    project = "common-r/quickstarts")
+df <- neptune_fetch_runs("common-r/quickstarts")
 }
 }
 \keyword{interface}

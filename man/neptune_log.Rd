@@ -13,8 +13,8 @@ neptune_log(x, value, step=NULL, timestamp=NULL, wait=FALSE)
   \item{x}{Neptune handler, for which we want to log value}
   \item{value}{(numeric or integer, or vector of numerics or integers) - The value to be logged or collections of values to be logged.}
   \item{step}{(numeric or integer) - Index of the log entry being appended. Must be strictly increasing.}
-  \item{timestamp}{(numeric or integer) - Time index of the log entry being appended in form of Unix time. If None current time (time.time()) will be used as a timestamp.}
-  \item{wait}{bool - If True the client will wait to send all tracked metadata to the server before making the assignment. This makes the call synchronous.}
+  \item{timestamp}{(numeric or integer) - Time index of the log entry being appended in form of Unix time. If NULL current time (time.time()) will be used as a timestamp.}
+  \item{wait}{logical - If TRUE the client will wait to send all tracked metadata to the server before making the assignment. This makes the call synchronous.}
 }
 \value{
 None
@@ -23,7 +23,7 @@ None
 Authors:
 \itemize{
   \item Mateusz Dominiak
-  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+  \item Maintainer: Neptune DevTeam Dev\email{backend@neptune.ai}
 }
 }
 \seealso{
@@ -38,7 +38,7 @@ Useful links:
 \dontrun{
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
 run <- neptune_init(api_token = 'ANONYMOUS',
-                    project = 'shared/r-integration')
+                    project = "common-r/quickstarts")
 neptune_log(run['loss'], 0.1)
 }
 }

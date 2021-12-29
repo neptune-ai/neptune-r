@@ -16,7 +16,7 @@ Neptune handler
   \item{value}{
 string - Path to the file to be uploaded or File value object eg. object returned by neptune_file_as_html call
 }
-\item{wait}{bool - If True the client will wait to send all tracked metadata to the server before making the assignment. This makes the call synchronous.}
+\item{wait}{logical - If TRUE the client will wait to send all tracked metadata to the server before making the assignment. This makes the call synchronous.}
 }
 \value{
 None
@@ -25,7 +25,7 @@ None
 Authors:
 \itemize{
   \item Mateusz Dominiak
-  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+  \item Maintainer: Neptune DevTeam Dev\email{backend@neptune.ai}
 }
 }
 \seealso{
@@ -40,7 +40,7 @@ Useful links:
 \dontrun{
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
 run <- neptune_init(api_token = 'ANONYMOUS',
-                    project = 'shared/r-integration')
+                    project = "common-r/quickstarts")
 neptune_upload(run['model'], "model.RData")
 }
 }

@@ -23,7 +23,7 @@ None
 Authors:
 \itemize{
   \item Mateusz Dominiak
-  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+  \item Maintainer: Neptune DevTeam Dev\email{backend@neptune.ai}
 }
 }
 \seealso{
@@ -38,7 +38,7 @@ Useful links:
 \dontrun{
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
 run <- neptune_init(api_token = 'ANONYMOUS',
-                    project = 'shared/r-integration')
+                    project = "common-r/quickstarts")
 image <- matrix(runif(16*16), nrow = 16)
 neptune_log(run['test/sample_images'], neptune_file_as_image(reticulate::np_array(image)))
 }

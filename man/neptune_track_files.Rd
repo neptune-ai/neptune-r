@@ -13,7 +13,7 @@
   \item{x}{Neptune handler}
   \item{path}{character - File path or S3-compatible path to the file or folder that you want to track.}
   \item{destination}{character - location inside Neptune artifact namespace where you want to log the metadata.}
-  \item{wait}{bool - - If True the client will wait to send all tracked metadata to the server before making the assignment. This makes the call synchronous.}
+  \item{wait}{logical - - If TRUE the client will wait to send all tracked metadata to the server before making the assignment. This makes the call synchronous.}
 }
 \value{
   None
@@ -22,7 +22,7 @@
   Authors:
     \itemize{
       \item Mateusz Dominiak
-      \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+      \item Maintainer: Neptune DevTeam Dev\email{backend@neptune.ai}
     }
 }
 \seealso{
@@ -38,7 +38,7 @@
   # We are using api token for an anonymous user neptuner. 
   # For your projects use your private token.
   run <- neptune_init(api_token = 'ANONYMOUS',
-                      project = 'shared/r-integration')
+                      project = "common-r/quickstarts")
   neptune_track_files(run['artifacts/images'], 'datasets/train/images')
 }
 }

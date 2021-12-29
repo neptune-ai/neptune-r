@@ -11,7 +11,7 @@
 }
 \arguments{
   \item{x}{Neptune handler}
-  \item{wait}{bool - If True the client will wait to send all tracked metadata to the server before making the assignment. This makes the call synchronous.}
+  \item{wait}{logical - If TRUE the client will wait to send all tracked metadata to the server before making the assignment. This makes the call synchronous.}
 }
 \value{
   None
@@ -20,7 +20,7 @@
   Authors:
     \itemize{
       \item Mateusz Dominiak
-      \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+      \item Maintainer: Neptune DevTeam Dev\email{backend@neptune.ai}
     }
 }
 \seealso{
@@ -34,7 +34,7 @@
 \examples{
   \dontrun{
     run <- neptune_init(api_token = 'ANONYMOUS',
-                        project = 'shared/r-integration')
+                        project = "common-r/quickstarts")
     neptune_clear(run['sys/tags'])
   }
 }

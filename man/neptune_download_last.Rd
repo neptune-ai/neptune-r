@@ -11,7 +11,7 @@
 }
 \arguments{
   \item{x}{Neptune handler}
-  \item{destination}{character - The directory where the file will be downloaded. If None is passed, the file will be downloaded to the current working directory.
+  \item{destination}{character - The directory where the file will be downloaded. If NULL is passed, the file will be downloaded to the current working directory.
     If destination is a directory, the file will be downloaded to the specified directory with a filename composed from field name and extension (if present).
     If destination is a path to a file, the file will be downloaded under the specified name.}
 }
@@ -22,7 +22,7 @@
   Authors:
     \itemize{
       \item Mateusz Dominiak
-      \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+      \item Maintainer: Neptune DevTeam Dev\email{backend@neptune.ai}
     }
 }
 \seealso{
@@ -36,7 +36,7 @@
 \examples{
   \dontrun{
     run <- neptune_init(api_token = 'ANONYMOUS',
-                        project = 'shared/r-integration')
+                        project = "common-r/quickstarts")
     df <- neptune_download_last(run['train/predictions'])
   }
 }

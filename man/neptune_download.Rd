@@ -11,7 +11,7 @@ neptune_download(x, destination)
 }
 \arguments{
   \item{x}{Neptune handler, for which we want to fetch the value}
-  \item{destination}{(str , optional, default is None) - The directory where the files will be downloaded. If None is passed, the files will be downloaded to the current working directory.
+  \item{destination}{(str , optional, default is NULL) - The directory where the files will be downloaded. If NULL is passed, the files will be downloaded to the current working directory.
 
 If destination is a directory, the file will be downloaded to the specified directory with a filename composed from field name and extension (if present).
 
@@ -24,7 +24,7 @@ None
 Authors:
 \itemize{
   \item Mateusz Dominiak
-  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+  \item Maintainer: Neptune DevTeam Dev\email{backend@neptune.ai}
 }
 }
 \seealso{
@@ -39,7 +39,7 @@ Useful links:
 \dontrun{
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
 run <- neptune_init(api_token = 'ANONYMOUS',
-                    project = 'shared/r-integration',
+                    project = "common-r/quickstarts",
                     run='AR-2', # Neptune Run ID of a run with artifact
                     mode='read-only')
 neptune_download(run['artifacts/images'], destination='datasets/train/images')

@@ -14,7 +14,7 @@ neptune_sync(run, wait=TRUE)
 Neptune run object.
   }
   \item{wait}{
-    logical - If True the client will first wait to send all tracked metadata to the server. This makes the call synchronous, see Connection modes guide.
+    logical - If TRUE the client will first wait to send all tracked metadata to the server. This makes the call synchronous, see Connection modes guide.
   }
 }
 \value{
@@ -24,7 +24,7 @@ Neptune run object.
 Authors:
 \itemize{
   \item Mateusz Dominiak
-  \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+  \item Maintainer: Neptune DevTeam Dev\email{backend@neptune.ai}
 }
 }
 \seealso{
@@ -39,7 +39,7 @@ Useful links:
 \dontrun{
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
 run <- neptune_init(api_token = 'ANONYMOUS',
-                    project = 'shared/r-integration')
+                    project = "common-r/quickstarts")
 run['lr'] <- 0.001
 neptune_sync(run)
 }

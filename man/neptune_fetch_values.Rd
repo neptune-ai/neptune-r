@@ -11,7 +11,7 @@
 }
 \arguments{
   \item{x}{Neptune handler}
-  \item{include_timestamp}{bool - Whether to include the fetched data should include the timestamp field.}
+  \item{include_timestamp}{logical - Whether to include the fetched data should include the timestamp field.}
 }
 \value{
   data.frame containing all the values and their indexes stored in the series field.
@@ -20,7 +20,7 @@
   Authors:
     \itemize{
       \item Mateusz Dominiak
-      \item Maintainer: Jakub Czakon \email{jakub.czakon@neptune.ai}
+      \item Maintainer: Neptune DevTeam Dev\email{backend@neptune.ai}
     }
 }
 \seealso{
@@ -34,7 +34,7 @@
 \examples{
   \dontrun{
     run <- neptune_init(api_token = 'ANONYMOUS',
-                        project = 'shared/r-integration')
+                        project = "common-r/quickstarts")
     df <- neptune_fetch_values(run['metrics/auc'])
   }
 }
