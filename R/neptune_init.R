@@ -50,8 +50,20 @@ neptune_init <-
         project = project,
         api_token = api_token,
         run = run,
+        source_files = source_files,
         mode = mode,
-        source_files = source_files
+        custom_run_id = custom_run_id,
+        name = name,
+        description = description,
+        tags = tags,
+        capture_stdout = capture_stdout,
+        capture_stderr = capture_stderr,
+        capture_hardware_metrics = capture_hardware_metrics,
+        capture_traceback = capture_traceback,
+        monitoring_namespace = monitoring_namespace,
+        fail_on_exception = fail_on_exception,
+        flush_period = flush_period,
+        proxies = proxies
       )
     ))
     env_ <- new.env()
