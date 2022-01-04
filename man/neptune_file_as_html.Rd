@@ -4,14 +4,14 @@
   Converts an object to an HTML File value object.
 }
 \description{
-  Converts an object to an HTML File value object. This way you can upload ggplot2, Plotly, Altair, Bokeh, Matplotlib interactive charts or upload directly DataFrame objects to explore them in Neptune UI.
+  Converts an object to an HTML File value object. This way you can upload ggplot2, Plotly interactive charts or upload directly DataFrame objects to explore them in Neptune UI.
 }
 \usage{
 neptune_file_as_html(x)
 }
 \arguments{
   \item{x}{
-  An object to be converted. Supported are Altair, Bokeh, Plotly, Matplotlib interactive charts, and Pandas DataFrame objects.
+  An object to be converted. Supported are ggplot2, Plotly and DataFrame objects.
   R matrices must be converted to numpy arrays via reticulate::np_array
   R dataframes are automatically converted to Pandas
 }
