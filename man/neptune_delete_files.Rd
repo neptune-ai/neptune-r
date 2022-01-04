@@ -10,7 +10,7 @@
   neptune_delete_files(x, paths, wait=FALSE)
 }
 \arguments{
-  \item{x}{Neptune handler}
+  \item{x}{Field}
   \item{paths}{character or vector of characters - Path or paths to files or folders to be deleted. Note that these are paths relative to the FileSet itself e.g. if the FileSet contains file example.txt, varia/notes.txt, varia/data.csv to delete whole subfolder you would pass varia as the argument.}
   \item{wait}{logical - If TRUE the client will wait to send all tracked metadata to the server before making the assignment. This makes the call synchronous.}
 }

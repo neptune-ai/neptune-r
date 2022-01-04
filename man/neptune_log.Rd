@@ -14,7 +14,7 @@ Available for following field types (https://docs.neptune.ai/api-reference/field
 neptune_log(x, value, step=NULL, timestamp=NULL, wait=FALSE, ...)
 }
 \arguments{
-  \item{x}{Neptune handler, for which we want to log value}
+  \item{x}{Field, for which we want to log value}
   \item{value}{Value or collection of values to be added to the field.}
   \item{step}{(numeric or integer) - Index of the log entry being appended. Must be strictly increasing.}
   \item{timestamp}{(numeric or integer) - Time index of the log entry being appended in form of Unix time. If NULL current time will be used as a timestamp.}

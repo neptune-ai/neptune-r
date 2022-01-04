@@ -11,7 +11,7 @@ neptune_upload(x, value, wait=FALSE, ...)
 }
 \arguments{
   \item{x}{
-Neptune handler
+Field
 }
   \item{value}{
 string - Path to the file to be uploaded or File value object eg. object returned by neptune_file_as_html call

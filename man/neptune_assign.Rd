@@ -10,7 +10,7 @@ Assigns the provided value to the field.
 neptune_assign(x, value, wait=FALSE)
 }
 \arguments{
-  \item{x}{Neptune handler or run, for which we want to assign the value}
+  \item{x}{Field or run, for which we want to assign the value}
   \item{value}{Value to be stored in a field.}
   \item{wait}{logical - If TRUE the client will wait to send all tracked metadata to the server. This makes the call synchronous.}
 }

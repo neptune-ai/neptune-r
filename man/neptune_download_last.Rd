@@ -10,7 +10,7 @@
   neptune_download_last(x, destination=NULL)
 }
 \arguments{
-  \item{x}{Neptune handler}
+  \item{x}{Field}
   \item{destination}{character - The directory where the file will be downloaded. If NULL is passed, the file will be downloaded to the current working directory.
     If destination is a directory, the file will be downloaded to the specified directory with a filename composed from field name and extension (if present).
     If destination is a path to a file, the file will be downloaded under the specified name.}

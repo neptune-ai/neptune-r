@@ -10,7 +10,7 @@ Removes the provided tag or tags from the set.
 neptune_remove(x, values, wait=FALSE)
 }
 \arguments{
-  \item{x}{Neptune handler, for which we want to remove tags eg. run['Sys/tags']}
+  \item{x}{Field, for which we want to remove tags eg. run['Sys/tags']}
   \item{values}{string or list of strings - Tag or tags to be removed. }
   \item{wait}{logical - If TRUE the client will wait to send all tracked metadata to the server before making the assignment. This makes the call synchronous.}
 }

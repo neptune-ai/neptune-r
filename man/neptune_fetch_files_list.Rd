@@ -10,7 +10,7 @@
   neptune_fetch_files_list(x)
 }
 \arguments{
-  \item{x}{Neptune handler}
+  \item{x}{Field}
 }
 \value{
   List of ArtifactFileData objects for all the files referenced in the artifacts. 

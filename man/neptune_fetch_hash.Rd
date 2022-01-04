@@ -10,7 +10,7 @@
   neptune_fetch_hash(x)
 }
 \arguments{
-  \item{x}{Neptune handler}
+  \item{x}{Field}
 }
 \value{
   Hash of a Neptune artifact as a character.

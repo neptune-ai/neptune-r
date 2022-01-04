@@ -10,7 +10,7 @@
   neptune_upload_files(x, globs, wait=FALSE)
 }
 \arguments{
-  \item{x}{Neptune handler}
+  \item{x}{Field}
   \item{globs}{character or vector of characters - Path or paths to the files to be uploaded.}
   \item{wait}{logical - If TRUE the client will wait to send all tracked metadata to the server before making the assignment. This makes the call synchronous.}
 }

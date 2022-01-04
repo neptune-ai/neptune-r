@@ -17,7 +17,7 @@ As well as fetch already tracked metadata - fetching parameters when resuming a 
 }
 }
 \value{
-Neptune handler
+Field
 }
 \author{
 Authors:

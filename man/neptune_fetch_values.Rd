@@ -10,7 +10,7 @@
   neptune_fetch_values(x, include_timestamp=TRUE)
 }
 \arguments{
-  \item{x}{Neptune handler}
+  \item{x}{Field}
   \item{include_timestamp}{logical - Whether to include the fetched data should include the timestamp field.}
 }
 \value{

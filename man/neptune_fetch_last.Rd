@@ -10,7 +10,7 @@
   neptune_fetch_last(x)
 }
 \arguments{
-  \item{x}{Neptune handler}
+  \item{x}{Field}
 }
 \value{
   Last float value logged.

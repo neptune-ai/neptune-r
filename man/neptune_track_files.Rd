@@ -10,7 +10,7 @@
   neptune_track_files(x, path, destination=NULL, wait=FALSE)
 }
 \arguments{
-  \item{x}{Neptune handler}
+  \item{x}{Field}
   \item{path}{character - File path or S3-compatible path to the file or folder that you want to track.}
   \item{destination}{character - location inside Neptune artifact namespace where you want to log the metadata.}
   \item{wait}{logical - - If TRUE the client will wait to send all tracked metadata to the server before making the assignment. This makes the call synchronous.}

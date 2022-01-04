@@ -10,7 +10,7 @@
   neptune_clear(x, wait=FALSE)
 }
 \arguments{
-  \item{x}{Neptune handler}
+  \item{x}{Field}
   \item{wait}{logical - If TRUE the client will wait to send all tracked metadata to the server before making the assignment. This makes the call synchronous.}
 }
 \value{
