@@ -5,7 +5,19 @@ neptune_init <-
             python = NULL,
             python_path,
             source_files = NULL,
-            mode = "async") {
+            mode = "async",
+            custom_run_id = NULL,
+            name = 'Untitled',
+            description = '',
+            tags = c(),
+            capture_stdout = TRUE,
+            capture_stderr = TRUE,
+            capture_hardware_metrics = TRUE,
+            capture_traceback = TRUE,
+            monitoring_namespace = 'monitoring',
+            fail_on_exception = TRUE,
+            flush_period = 5,
+            proxies = NULL) {
     if (!(mode %in% c("async", "sync", "offline", "debug", "read-only"))) {
       stop('mode must be one of "async", "sync", "offline", "debug", "read-only"')
     }
@@ -49,7 +61,7 @@ neptune_init <-
         x$run$stop()
       }, error = function(e) {
         warning(paste0("Failed to stop neptune run: ", as.character(e)))
-      }), onexit=T)
+      }), onexit = T)
     
     return(run)
   }
