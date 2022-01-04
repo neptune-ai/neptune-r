@@ -1,5 +1,5 @@
-\name{neptune_set_token}
-\alias{neptune_set_token}
+\name{neptune_set_api_token}
+\alias{neptune_set_api_token}
 \title{
   Sets NEPTUNE_API_TOKEN environment variables
 }
@@ -7,7 +7,7 @@
   Sets NEPTUNE_API_TOKEN environment variables. It is used as a default api_token value by neptune_init.
 }
 \usage{
-neptune_set_token(token)
+neptune_set_api_token(token)
 }
 \arguments{
   \item{token}{
@@ -33,6 +33,6 @@ Useful links:
 }
 }
 \examples{
-neptune_set_token("ANONYMOUS")
+neptune_set_api_token("ANONYMOUS")
 }
 \keyword{interface}

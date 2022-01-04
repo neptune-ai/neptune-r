@@ -1,4 +1,4 @@
-neptune_set_token <-
+neptune_set_api_token <-
 function (token)
 {
   if(py_available()){

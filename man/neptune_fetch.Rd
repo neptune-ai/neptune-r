@@ -1,10 +1,12 @@
 \name{neptune_fetch}
 \alias{neptune_fetch}
 \title{
-Fetches field value from Neptune servers. You should only use .fetch() to copy the artifact.
+Fetch values of all non-File Atom fields as a named list.
 }
 \description{
-Fetches field value from Neptune servers. You should only use .fetch() to copy the artifact.
+Fetch values of all non-File Atom fields as a named list.
+The result will preserve the hierarchical structure of the run's metadata, but will contain only non-File Atom fields.
+You can use this method to quickly retrieve previous run's parameters.
 }
 \usage{
 neptune_fetch(x)
@@ -13,7 +15,7 @@ neptune_fetch(x)
   \item{x}{Field or run, for which we want to fetch the value}
 }
 \value{
-Artifact object
+named list containing all non-File Atom fields values.
 }
 \author{
 Authors:
@@ -33,10 +35,13 @@ Useful links:
 \examples{
 \dontrun{
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
-run <- neptune_init(api_token = 'ANONYMOUS',
-                    project = "common-r/quickstarts")
-neptune_assign(run['paramaters'], list(epochs=100, lr=0.01))
-neptune_fetch(run['paramaters'])
+resumed_run <- neptune_init(api_token = 'ANONYMOUS',
+                    project = "common-r/quickstarts",
+                    run="HEL-3")
+params <- neptune_fetch(resumed_run['model/paramaters'])
+run_data <- neptune_fetch(resumed_run)
+print(run_data)
+# this will print out all Atom attributes stored in run as a dict
 }
 }
 \keyword{interface}
