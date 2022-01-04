@@ -37,7 +37,7 @@ Useful links:
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
 run <- neptune_init(api_token = 'ANONYMOUS',
                     project = "common-r/quickstarts")
-neptune_assign(run['paramaters'], list(epochs=100, lr=0.01))
+neptune_assign(run['parameters'], list(epochs=100, lr=0.01))
 }
 }
 \keyword{interface}

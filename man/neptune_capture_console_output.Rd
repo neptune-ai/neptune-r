@@ -36,7 +36,7 @@
     run <- neptune_init(api_token = 'ANONYMOUS',
                         project = "common-r/quickstarts")
     neptune_capture_console_output(run)
-    print(123)
+    print("Starting training...")
   }
 }
 \keyword{interface}

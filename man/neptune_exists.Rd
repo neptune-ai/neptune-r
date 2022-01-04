@@ -5,7 +5,7 @@
 }
 \description{
   Checks if there is any field or namespace under the specified path.
-  Note that this method checks the local representation of the run. The field may have been created by another process (use .sync() to synchronize local representation) or the metadata may have not reached the Neptune servers so it may be impossible to fetch (use .wait() to wait for all tracking calls to finish).
+  Note that this method checks the local representation of the run. The field may have been created by another process (use neptune_sync(run) to synchronize local representation) or the metadata may have not reached the Neptune servers so it may be impossible to fetch (use neptune_wait(run) to wait for all tracking calls to finish).
 }
 \usage{
   neptune_exists(run, path)

@@ -10,8 +10,8 @@ Downloads all the files that are referenced in the field.
 neptune_download(x, destination)
 }
 \arguments{
-  \item{x}{Neptune handler, for which we want to fetch the value}
-  \item{destination}{(str , optional, default is NULL) - The directory where the files will be downloaded. If NULL is passed, the files will be downloaded to the current working directory.
+  \item{x}{Field for which we want to download the files}
+  \item{destination}{(character - The directory where the files will be downloaded. If NULL is passed, the files will be downloaded to the current working directory.
 
 If destination is a directory, the file will be downloaded to the specified directory with a filename composed from field name and extension (if present).
 

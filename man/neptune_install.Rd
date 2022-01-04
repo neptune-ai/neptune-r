@@ -5,7 +5,7 @@
 }
 \description{
 \code{neptune_install()} installs just the neptune-client python package and it's
-direct dependencies..
+direct dependencies.
 }
 \usage{
 neptune_install(method = c("auto", "virtualenv", "conda"),
@@ -29,8 +29,7 @@ The path to a conda executable. Use "auto" to allow reticulate to automatically 
 Neptune-client version to install. Valid values include:
    +  `"default"` installs  `r default_version`
 
-   + `"release"` installs the latest release version of tensorflow (which may
-   be incompatible with the current version of the R package)
+   + `"release"` installs the latest release version of neptune-client
 
    + A version specification like `"0.9"` or `"0.9.16"`. Note that if the patch
    version is not supplied, the latest patch release is installed
