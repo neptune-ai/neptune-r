@@ -16,14 +16,14 @@ neptune_init(project = NULL,
             source_files = NULL,
             mode = "async",
             custom_run_id = NULL,
-            name = 'Untitled',
-            description = '',
-            tags = c(),
+            name = NULL,
+            description = NULL,
+            tags = NULL,
             capture_stdout = TRUE,
             capture_stderr = TRUE,
             capture_hardware_metrics = TRUE,
             capture_traceback = TRUE,
-            monitoring_namespace = 'monitoring',
+            monitoring_namespace = NULL,
             fail_on_exception = TRUE,
             flush_period = 5,
             proxies = NULL)
@@ -57,7 +57,7 @@ Unix style pathname pattern expansion is supported. For example, you can pass '*
 character – Connection mode in which the tracking will work. Possible values "async", "sync", "offline", and "debug", "read-only". See Connection modes guide.
 }
 \item{custom_run_id}{character – A unique identifier that can be used to log metadata to a single run from multiple files or processes. The maximum length of the identifier is 32 characters. Make sure you are using the same identifier everywhere. See Pipelines guide.
-If None and the NEPTUNE_CUSTOM_RUN_ID environment variable is set Neptune will use its value as custom_run_id.}
+If NULL and the NEPTUNE_CUSTOM_RUN_ID environment variable is set Neptune will use its value as custom_run_id.}
 \item{name}{character – Editable name of the run. Name is displayed in the run's Details and in Runs table as a column.}
 \item{description}{character – Editable description of the run. Description is displayed in the run's Details and can be displayed in the runs view as a column.}
 \item{tags}{character vector – Tags of the run. They are editable after run is created. Tags are displayed in the run's Details and can be viewed in Runs table view as a column.}
@@ -74,7 +74,7 @@ If None and the NEPTUNE_CUSTOM_RUN_ID environment variable is set Neptune will u
 }
 \item{flush_period}{numeric -  how often asynchronous thread should synchronize data with Neptune servers. Value in seconds.
 }
-\item{proxies}{named list (python's dict) - Argument passed to HTTP calls made via the  library. For more information see their proxies .
+\item{proxies}{named list (python's dict) - Argument passed to HTTP calls made via the python's Requests library. For more information see their proxies section.
 }
 }
 \value{
