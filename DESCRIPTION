@@ -1,0 +1,20 @@
+Package: neptune
+Type: Package
+Title: Interface to 'Neptune' Experiment Tracking and Management Tool
+Version: 0.2.0
+Authors@R: c(
+  person("Mateusz", "Dominiak", role = c("aut")),
+  person("Neptune DevTeam", email = "backend@neptune.ai", role = c("aut","cre"))
+  )
+Maintainer: Neptune DevTeam <backend@neptune.ai>
+Description: Interface to 'Neptune', experiment tracking tool that helps you organize
+    your machine learning experiments. You can log your hyperparameter, metrics, model binaries and
+    performance charts, organize them with tags and names and share everything easily in the app.
+    For more information see <https://neptune.ai/>.
+License: Apache License 2.0
+URL: https://github.com/neptune-ai/neptune-r
+BugReports: https://github.com/neptune-ai/neptune-r/issues
+Encoding: UTF-8
+LazyData: true
+SystemRequirements: Python (>= 3.0.0), Neptune (https://neptune.ai/)
+Imports: reticulate (>= 1.22), this.path (>= 0.4.4), rstudioapi (>= 0.7), ggplot2 (>= 3.3.5), plotly (>= 4.9.4.1), htmlwidgets (>= 1.5.3), methods
