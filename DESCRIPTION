@@ -2,10 +2,7 @@ Package: neptune
 Type: Package
 Title: Interface to 'Neptune' Experiment Tracking and Management Tool
 Version: 0.2.0
-Authors@R: c(
-  person("Mateusz", "Dominiak", role = c("aut")),
-  person("Neptune DevTeam", email = "backend@neptune.ai", role = c("aut","cre"))
-  )
+Authors@R: c(person("Mateusz", "Dominiak", role = c("aut")), person("Neptune DevTeam", email = "backend@neptune.ai", role = c("aut","cre")))
 Maintainer: Neptune DevTeam <backend@neptune.ai>
 Description: Interface to 'Neptune', experiment tracking tool that helps you organize
     your machine learning experiments. You can log your hyperparameter, metrics, model binaries and
