@@ -8,7 +8,7 @@ Description: Interface to 'Neptune', experiment tracking tool that helps you org
     your machine learning experiments. You can log your hyperparameter, metrics, model binaries and
     performance charts, organize them with tags and names and share everything easily in the app.
     For more information see <https://neptune.ai/>.
-License: Apache License 2.0
+License: Apache License 2.0 | file LICENSE
 URL: https://github.com/neptune-ai/neptune-r
 BugReports: https://github.com/neptune-ai/neptune-r/issues
 Encoding: UTF-8
