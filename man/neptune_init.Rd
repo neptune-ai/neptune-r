@@ -61,7 +61,7 @@ If NULL and the NEPTUNE_CUSTOM_RUN_ID environment variable is set Neptune will u
 \item{name}{character – Editable name of the run. Name is displayed in the run's Details and in Runs table as a column.}
 \item{description}{character – Editable description of the run. Description is displayed in the run's Details and can be displayed in the runs view as a column.}
 \item{tags}{character vector – Tags of the run. They are editable after run is created. Tags are displayed in the run's Details and can be viewed in Runs table view as a column.}
-\item{capture_stdout}{logical – Whether to send python's stdout. Tracked metadata will be stored inside monitoring_namespace. To capture R's output run neptune_capture_console_output}
+\item{capture_stdout}{logical – Whether to send python's stdout. Tracked metadata will be stored inside monitoring_namespace.}
 \item{capture_stderr}{logical – Whether to send python’s stderr. Tracked metadata will be stored inside monitoring_namespace.
 }
 \item{capture_hardware_metrics}{logical – Whether to send hardware monitoring logs (CPU, GPU, Memory utilization). Tracked metadata will be stored inside monitoring_namespace.

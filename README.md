@@ -1,6 +1,6 @@
 # neptune-r
 
-R interface for [Neptune](http://neptune.ai/), machine learning experiment tracking tool.
+R interface for [Neptune](https://neptune.ai/), machine learning experiment tracking tool.
 
 It lets you easily track:
 * hyperparameters
@@ -11,8 +11,8 @@ It lets you easily track:
 Everything is logged to Neptune and can be:
 * organized
 * visualized
-* shared 
-* accessed 
+* shared
+* accessed
 
 **Keep the knowledge in one place, organized and ready to be shared with anyone.**
 
@@ -107,7 +107,7 @@ log_metric('accuracy', 0.92)
 ```
 
 #### Track result diagnostics
-You can even log images to Neptune. Just save to the 
+You can even log images to Neptune. Just save to the
 
 ```R
 log_image(name = 'performance charts', filename = 'roc_auc.png')
@@ -121,7 +121,7 @@ You can save model weights and any other artifact that you created during your e
 log_artifact(filename = 'model.Rdata')
 ```
 
-**[Check the example project here](https://ui.neptune.ai/o/shared/org/r-integration/experiments?viewId=817be69c-103e-11ea-9a39-42010a840083)**
+**[Check the example project here](https://app.neptune.ai/o/shared/org/r-integration/experiments?viewId=817be69c-103e-11ea-9a39-42010a840083)**
 
 
 # Getting help
@@ -130,5 +130,3 @@ The best order of communication is:
 
  * [neptune documentation](https://docs.neptune.ai/getting-started/getting-help.html#chat)
  * [github issues](https://github.com/neptune-ai/neptune-client/issues)
-
-
