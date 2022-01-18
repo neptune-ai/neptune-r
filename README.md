@@ -9,9 +9,9 @@
 It gives you a single place to log, store, display, organize, compare, and query all your model-building metadata.
 
 Neptune is used for:
-* Experiment tracking: Log, display, organize, and compare ML experiments in a single place.
-* Model registry: Version, store, manage, and query trained models, and model building metadata.
-* Monitoring ML runs live: Record and monitor model training, evaluation, or production runs live
+* **Experiment tracking**: Log, display, organize, and compare ML experiments in a single place.
+* **Model registry**: Version, store, manage, and query trained models, and model building metadata.
+* **Monitoring ML runs live**: Record and monitor model training, evaluation, or production runs live
 
 # Getting started
 
