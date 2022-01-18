@@ -1,54 +1,26 @@
-# neptune-r
+<div align="center">
+  <img src="https://neptune.ai/wp-content/uploads/neptune-logo-less-margin-e1611939742683.png" width="400" /><br><br>
+</div>
 
-R interface for [Neptune](https://neptune.ai/), machine learning experiment tracking tool.
+# Neptune
 
-It lets you easily track:
-* hyperparameters
-* metrics
-* performance charts and images
-* model binaries
+[Neptune](https://neptune.ai/) is a metadata store for MLOps, built for teams that run a lot of experiments.
 
-Everything is logged to Neptune and can be:
-* organized
-* visualized
-* shared
-* accessed
+It gives you a single place to log, store, display, organize, compare, and query all your model-building metadata.
 
-**Keep the knowledge in one place, organized and ready to be shared with anyone.**
-
-![image](https://gist.githubusercontent.com/jakubczakon/f754769a39ea6b8fa9728ede49b9165c/raw/2f3a5577ac55595e8b9241d81a2de43a0fc663db/wiki.png)
-![image](https://gist.githubusercontent.com/jakubczakon/f754769a39ea6b8fa9728ede49b9165c/raw/2a67f6ed1017d3f6a3dec6fe85d1727f3b41f533/neptune_quick_start.png)
-![image](https://gist.githubusercontent.com/jakubczakon/f754769a39ea6b8fa9728ede49b9165c/raw/8aa4f35e29a2a5177e89a8ed5d1daa233b04b0b9/clf_report.png)
-![image](https://gist.githubusercontent.com/jakubczakon/f754769a39ea6b8fa9728ede49b9165c/raw/8aa4f35e29a2a5177e89a8ed5d1daa233b04b0b9/ship_predictions.png)
+Neptune is used for:
+* Experiment tracking: Log, display, organize, and compare ML experiments in a single place.
+* Model registry: Version, store, manage, and query trained models, and model building metadata.
+* Monitoring ML runs live: Record and monitor model training, evaluation, or production runs live
 
 # Getting started
 
-### Register
+## Register
 Go to https://neptune.ai/ and sign up.
 
-It is completely free for individuals and academic teams, and you can invite others to join your team!
+You can use Neptune for free for work, research, and personal projects. All individual accounts are free within quota.
 
-### Get your API token
-In order to start working with Neptune you need to get the API token first.
-To do that, click on the `Get API Token` button on the top left.
-
-![image](https://gist.githubusercontent.com/jakubczakon/f754769a39ea6b8fa9728ede49b9165c/raw/e3776e605fea1fd5377c3ec748ba87b71cd8ef12/get_api_token.png)
-
-### Create your first project
-Click on `Projects` and the `New project`. Choose a name for it and whether you want it public or private.
-
-![image](https://gist.githubusercontent.com/jakubczakon/f754769a39ea6b8fa9728ede49b9165c/raw/e3776e605fea1fd5377c3ec748ba87b71cd8ef12/new_project.png)
-
-
-### Invite others
-Go to your project, click `Settings` and send invites!
-
-![image](https://gist.githubusercontent.com/jakubczakon/f754769a39ea6b8fa9728ede49b9165c/raw/e3776e605fea1fd5377c3ec748ba87b71cd8ef12/invite.png)
-
-### Start tracking your work
-Neptune let's you track any information important to your experimentation process.
-
-#### Install R package
+## Install Neptune R package
 
 Simply run:
 
@@ -59,74 +31,70 @@ install.packages('neptune')
 and
 
 ```R
-install_neptune()
+neptune_install()
 ```
-#### Set Neptune token
+
+## Create a tracked run
 
 ```R
-set_neptune_token(token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vdWkubmVwdHVuZS5haSIsImFwaV9rZXkiOiJiNzA2YmM4Zi03NmY5LTRjMmUtOTM5ZC00YmEwMzZmOTMyZTQifQ==')
+run <- neptune_init(project="MY_WORKSPACE/MY_PROJECT",
+                    api_token="NEPTUNE_API_TOKEN")
 ```
 
-#### Initialize Neptune
-Toward the top of your script insert the following snippet.
+This code creates a Run in the project of your choice. This will be your gateway to log metadata to Neptune. 
+
+You need to pass your credentials (project and API token) to the `neptune_init()` method. You can also set the API token globally:
 
 ```R
-init_neptune(project_name = "common-r/quickstarts")
+neptune_set_api_token(token = "NEPTUNE_API_TOKEN")
 ```
 
-#### Create and stop the experiment
-You can treat every piece of work that you want to record as an experiment.
-Just create an experiment:
+### API token
+
+To find your API token:
+* Go to the Neptune UI
+* Open the **User menu** toggle in the upper right
+* Click **Get your API token**
+* Copy your API token 
+
+or [get your API token directly from here](https://app.neptune.ai/get_my_api_token).
+
+### Project
+
+The project argument has the format `WORKSPACE_NAME/PROJECT_NAME`.
+
+To find it:
+* Go to the Neptune UI 
+* Go to your project 
+* Open **Settings** > **Properties**
+* Copy the project name
+
+### Stop tracking
+
+Once you are finished with tracking metadata you need to stop the tracking for that particular run:
 
 ```R
-create_experiment(name = 'my first experiment')
-```
-Do whatever you want and record it here!
-Stop the experiment.
+neptune_stop(run)
 
-```R
-stop_experiment()
+# Note that you can also use reticulate based syntax:
+run$stop()
 ```
 
-#### Track hyperparameters
-Making sure that all your hyperparameters are recorded is very important.
-With Neptune, you can do that easily by passing `params` dictionary when creating the experiment.
+If you are running a script it will stop tracking automatically. However, in interactive environment such as RStudio you need to to stop it explicitely.
 
-```R
-create_experiment(name = 'my-first-experiment',
-                  params = list(metric='Accuracy', model='rf', 'cvFolds'=2),
-)
+## Track metadata
 
-```
+### Log hyperparameters
 
-#### Track metrics
-It is super easy. Just log your metric to Neptune.
+### Log training metrics
 
-```R
-log_metric('accuracy', 0.92)
-```
+### Log evaluation results
 
-#### Track result diagnostics
-You can even log images to Neptune. Just save to the
-
-```R
-log_image(name = 'performance charts', filename = 'roc_auc.png')
-log_image(name = 'performance charts', filename = 'confusion_matrix.png')
-```
-
-#### Track artifacts
-You can save model weights and any other artifact that you created during your experiment.
-
-```R
-log_artifact(filename = 'model.Rdata')
-```
-
-**[Check the example project here](https://app.neptune.ai/o/shared/org/r-integration/experiments?viewId=817be69c-103e-11ea-9a39-42010a840083)**
-
+### Upload model file
 
 # Getting help
-If you get stuck, don't worry we are here to help.
-The best order of communication is:
+If you get stuck, don't worry we are here to help:
 
- * [neptune documentation](https://docs.neptune.ai/getting-started/getting-help.html#chat)
- * [github issues](https://github.com/neptune-ai/neptune-client/issues)
+ * [Neptune documentation](https://docs.neptune.ai)
+ * [Chat with us](https://neptune.ai/?chat-with-us)
+ * [GitHub Issues](https://github.com/neptune-ai/neptune-r/issues)
