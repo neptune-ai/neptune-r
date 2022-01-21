@@ -1,13 +1,16 @@
 Package: neptune
 Type: Package
-Title: Interface to 'Neptune' Experiment Tracking and Management Tool
+Title: MLOps metadata store. Experiment tracking and model registry for production teams.
 Version: 0.2.0
 Authors@R: c(person("Mateusz", "Dominiak", role = c("aut")), person("Rafal Jankowski", email = "rafal.jankowski@neptune.ai", role = c("aut","cre")))
 Maintainer: Rafal Jankowski <rafal.jankowski@neptune.ai>
-Description: Interface to 'Neptune', experiment tracking tool that helps you organize
-    your machine learning experiments. You can log your hyperparameter, metrics, model binaries and
+Description: Neptune is a metadata store for MLOps, built for teams that run a lot of experiments. It gives you a single place to log, store, display, organize, compare, and query all your model-building metadata.
     performance charts, organize them with tags and names and share everything easily in the app.
-    For more information see <https://neptune.ai/>.
+    Neptune is used for:
+    • Experiment tracking: Log, display, organize, and compare ML experiments in a single place.
+    • Model registry: Version, store, manage, and query trained models, and model building metadata.
+    • Monitoring ML runs live: Record and monitor model training, evaluation, or production runs live
+    For more information see https://neptune.ai/.
 License: Apache License 2.0 | file LICENSE
 URL: https://github.com/neptune-ai/neptune-r
 BugReports: https://github.com/neptune-ai/neptune-r/issues
