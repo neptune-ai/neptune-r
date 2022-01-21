@@ -4,8 +4,8 @@ Title: MLOps metadata store. Experiment tracking and model registry for producti
 Version: 0.2.0
 Authors@R: c(person("Mateusz", "Dominiak", role = c("aut")), person("Rafal Jankowski", email = "rafal.jankowski@neptune.ai", role = c("aut","cre")))
 Maintainer: Rafal Jankowski <rafal.jankowski@neptune.ai>
-Description: Neptune is a metadata store for MLOps, built for teams that run a lot of experiments. It gives you a single place to log, store, display, organize, compare, and query all your model-building metadata.
-    performance charts, organize them with tags and names and share everything easily in the app.
+Description: Neptune is a metadata store for MLOps, built for teams that run a lot of experiments. 
+    It gives you a single place to log, store, display, organize, compare, and query all your model-building metadata.
     Neptune is used for:
     • Experiment tracking: Log, display, organize, and compare ML experiments in a single place.
     • Model registry: Version, store, manage, and query trained models, and model building metadata.
