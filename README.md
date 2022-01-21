@@ -81,7 +81,7 @@ neptune_stop(run)
 run$stop()
 ```
 
-If you are running a script it will stop tracking automatically at the end. However, in interactive environment such as RStudio you need to to stop it explicitely.
+If you are running a script it will stop tracking automatically at the end. However, in interactive environment such as RStudio you need to to stop it explicitly.
 
 ## Track metadata
 
@@ -128,8 +128,8 @@ You can log training metrics to Neptune using series fields. In Neptune there ar
 ### Log evaluation results
 
 ```R
-run["evaluation/accuracy] <- eval_acc
-run["evaluation/loss] <- eval_loss
+run["evaluation/accuracy"] <- eval_acc
+run["evaluation/loss"] <- eval_loss
 ```
 
 To log evaluation metrics simply assign them to a field of your choice. Using the snippet above, both evaluation metrics will be stored in the same evaluation namespace.
