@@ -1,132 +1,174 @@
-# neptune-r
+<div align="center">
+  <img src="https://neptune.ai/wp-content/uploads/neptune-logo-less-margin-e1611939742683.png" width="400" /><br><br>
+</div>
 
-R interface for [Neptune](https://neptune.ai/), machine learning experiment tracking tool.
+# Neptune
 
-It lets you easily track:
-* hyperparameters
-* metrics
-* performance charts and images
-* model binaries
+[Neptune](https://neptune.ai/) is a metadata store for MLOps, built for teams that run a lot of experiments.
 
-Everything is logged to Neptune and can be:
-* organized
-* visualized
-* shared
-* accessed
+It gives you a single place to log, store, display, organize, compare, and query all your model-building metadata.
 
-**Keep the knowledge in one place, organized and ready to be shared with anyone.**
-
-![image](https://gist.githubusercontent.com/jakubczakon/f754769a39ea6b8fa9728ede49b9165c/raw/2f3a5577ac55595e8b9241d81a2de43a0fc663db/wiki.png)
-![image](https://gist.githubusercontent.com/jakubczakon/f754769a39ea6b8fa9728ede49b9165c/raw/2a67f6ed1017d3f6a3dec6fe85d1727f3b41f533/neptune_quick_start.png)
-![image](https://gist.githubusercontent.com/jakubczakon/f754769a39ea6b8fa9728ede49b9165c/raw/8aa4f35e29a2a5177e89a8ed5d1daa233b04b0b9/clf_report.png)
-![image](https://gist.githubusercontent.com/jakubczakon/f754769a39ea6b8fa9728ede49b9165c/raw/8aa4f35e29a2a5177e89a8ed5d1daa233b04b0b9/ship_predictions.png)
+Neptune is used for:
+* **Experiment tracking**: Log, display, organize, and compare ML experiments in a single place.
+* **Model registry**: Version, store, manage, and query trained models, and model building metadata.
+* **Monitoring ML runs live**: Record and monitor model training, evaluation, or production runs live
 
 # Getting started
 
-### Register
+## Register
 Go to https://neptune.ai/ and sign up.
 
-It is completely free for individuals and academic teams, and you can invite others to join your team!
+You can use Neptune for free for work, research, and personal projects. All individual accounts are free within quota.
 
-### Get your API token
-In order to start working with Neptune you need to get the API token first.
-To do that, click on the `Get API Token` button on the top left.
-
-![image](https://gist.githubusercontent.com/jakubczakon/f754769a39ea6b8fa9728ede49b9165c/raw/e3776e605fea1fd5377c3ec748ba87b71cd8ef12/get_api_token.png)
-
-### Create your first project
-Click on `Projects` and the `New project`. Choose a name for it and whether you want it public or private.
-
-![image](https://gist.githubusercontent.com/jakubczakon/f754769a39ea6b8fa9728ede49b9165c/raw/e3776e605fea1fd5377c3ec748ba87b71cd8ef12/new_project.png)
-
-
-### Invite others
-Go to your project, click `Settings` and send invites!
-
-![image](https://gist.githubusercontent.com/jakubczakon/f754769a39ea6b8fa9728ede49b9165c/raw/e3776e605fea1fd5377c3ec748ba87b71cd8ef12/invite.png)
-
-### Start tracking your work
-Neptune let's you track any information important to your experimentation process.
-
-#### Install R package
+## Install Neptune R package
 
 Simply run:
 
 ```R
-install.packages('neptune')
+install.packages("neptune")
 ```
 
 and
 
 ```R
-install_neptune()
-```
-#### Set Neptune token
-
-```R
-set_neptune_token(token = 'eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vdWkubmVwdHVuZS5haSIsImFwaV9rZXkiOiJiNzA2YmM4Zi03NmY5LTRjMmUtOTM5ZC00YmEwMzZmOTMyZTQifQ==')
+library("neptune")
+neptune_install()
 ```
 
-#### Initialize Neptune
-Toward the top of your script insert the following snippet.
+## Create a tracked run
 
 ```R
-init_neptune(project_name = "common-r/quickstarts")
+run <- neptune_init(project="MY_WORKSPACE/MY_PROJECT",
+                    api_token="NEPTUNE_API_TOKEN")
 ```
 
-#### Create and stop the experiment
-You can treat every piece of work that you want to record as an experiment.
-Just create an experiment:
+This code creates a Run in the project of your choice. This will be your gateway to log metadata to Neptune. 
+
+You need to pass your credentials (project and API token) to the `neptune_init()` method. You can also set the API token globally:
 
 ```R
-create_experiment(name = 'my first experiment')
-```
-Do whatever you want and record it here!
-Stop the experiment.
-
-```R
-stop_experiment()
+neptune_set_api_token(token = "NEPTUNE_API_TOKEN")
 ```
 
-#### Track hyperparameters
-Making sure that all your hyperparameters are recorded is very important.
-With Neptune, you can do that easily by passing `params` dictionary when creating the experiment.
+### API token
+
+To find your API token:
+* Go to the Neptune UI
+* Open the **User menu** toggle in the upper right
+* Click **Get your API token**
+* Copy your API token 
+
+or [get your API token directly from here](https://app.neptune.ai/get_my_api_token).
+
+### Project
+
+The project argument has the format `WORKSPACE_NAME/PROJECT_NAME`.
+
+To find it:
+* Go to the Neptune UI 
+* Go to your project 
+* Open **Settings** > **Properties**
+* Copy the project name
+
+### Stop tracking
+
+Once you are finished with tracking metadata you need to stop the tracking for that particular run:
 
 ```R
-create_experiment(name = 'my-first-experiment',
-                  params = list(metric='Accuracy', model='rf', 'cvFolds'=2),
+neptune_stop(run)
+
+# Note that you can also use reticulate based syntax:
+run$stop()
+```
+
+If you are running a script it will stop tracking automatically at the end. However, in interactive environment such as RStudio you need to to stop it explicitly.
+
+## Track metadata
+
+### Log hyperparameters
+
+```R
+params <- list(
+  "dense_units"= 128,
+  "activation"= "relu",
+  "dropout"= 0.23,
+  "learning_rate"= 0.15,
+  "batch_size"= 64,
+  "n_epochs"= 30
 )
-
+run["parameters"] <- params
 ```
 
-#### Track metrics
-It is super easy. Just log your metric to Neptune.
+If you have parameters in form of a dictionary you can log them to Neptune in batch. It will create a field with the appropriate type for each dictionary entry. 
+You can update the hyperparameters or add new ones later in the code:
 
 ```R
-log_metric('accuracy', 0.92)
+# Add additional parameters 
+run["model/parameters/seed"] <- RANDOM_SEED
+
+# Update parameters e.g. after triggering an early stopping
+run["model/parameters/n_epochs"] <- epoch
 ```
 
-#### Track result diagnostics
-You can even log images to Neptune. Just save to the
+### Log training metrics
 
 ```R
-log_image(name = 'performance charts', filename = 'roc_auc.png')
-log_image(name = 'performance charts', filename = 'confusion_matrix.png')
+for (i in 1:epochs) {
+  [...] # My training loop
+  neptune_log(run["train/epoch/loss"], loss)
+  neptune_log(run["train/epoch/accuracy"], acc)
+}
+
+# Note that you can also use reticulate based syntax:
+run["train/epoch/loss"]$log(loss)
 ```
 
-#### Track artifacts
-You can save model weights and any other artifact that you created during your experiment.
+You can log training metrics to Neptune using series fields. In Neptune there are three types of series - float series, string series, and file series. Each `neptune_log()` will add a new value at the end of the series. 
+
+### Log evaluation results
 
 ```R
-log_artifact(filename = 'model.Rdata')
+run["evaluation/accuracy"] <- eval_acc
+run["evaluation/loss"] <- eval_loss
 ```
 
-**[Check the example project here](https://app.neptune.ai/o/shared/org/r-integration/experiments?viewId=817be69c-103e-11ea-9a39-42010a840083)**
+To log evaluation metrics simply assign them to a field of your choice. Using the snippet above, both evaluation metrics will be stored in the same evaluation namespace.
 
+```R
+neptune_upload(run["evaluation/ROC"], "roc.png")
+
+# You can upload ggplot plots directly without saving them to a file
+neptune_upload(run["evaluation/ROC"], ggplot_roc)
+
+# If you want to control additional parameters like size of the plot you can pass the same arguments as to ggsave
+neptune_upload(run["evaluation/ROC"], ggplot_roc, width=20, height=20, units="cm")
+
+# Note that you can also use reticulate based syntax:
+run["evaluation/ROC"]$upload("roc.png")
+run["evaluation/ROC"]$upload(ggplot_roc)
+```
+
+You can log plots and charts easily using the `neptune_upload()` function. In the case of a ggplot object, it gets converted to an image file and uploaded, but you can also upload images from the local disc.
+
+### Upload model file
+
+You can upload any binary file (e.g. model weights) from disk using the `neptune_upload()` method. If your model is saved as multiple files you can upload a whole folder as a `FileSet` using `neptune_upload_files()`.
+
+```R
+# Upload a single fingle sile
+neptune_upload(run["model"], "model.Rdata")
+
+# You can also upload folders in batch if you don't need access to the separate files
+neptune_upload_files(run["model"], "models")
+
+# Note that you can also use reticulate based syntax:
+run["model"]$upload("model.Rdata")
+run["model"]$upload_files("models")
+```
 
 # Getting help
-If you get stuck, don't worry we are here to help.
-The best order of communication is:
+If you get stuck, don't worry we are here to help:
 
- * [neptune documentation](https://docs.neptune.ai/getting-started/getting-help.html#chat)
- * [github issues](https://github.com/neptune-ai/neptune-client/issues)
+ * [Neptune documentation](https://docs.neptune.ai)
+ * [Chat with us](https://neptune.ai/?chat-with-us)
+ * [GitHub Issues](https://github.com/neptune-ai/neptune-r/issues)
