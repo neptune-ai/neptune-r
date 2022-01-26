@@ -72,9 +72,9 @@ neptune_init <-
     env_$run <- run
     reg.finalizer(env_, function(x)
       tryCatch({
-        x$run$sync()
+        x$run$wait()
       }, error = function(e) {
-        warning(paste0("Failed to sync neptune run: ", as.character(e)))
+        warning(paste0("Failed to await neptune run synchronization: ", as.character(e)))
       }), onexit = TRUE)
 
     return(run)
