@@ -14,7 +14,7 @@ function(version) {
   package <- "neptune-client"
 
   if(version %in% c("default", ""))
-    version <- numeric_version("0.13.3")
+    return(package)
 
   if(!grepl("[><=]", version))
     version <- sprintf("==%s.*", version)

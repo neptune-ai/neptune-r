@@ -44,7 +44,7 @@ neptune_init <-
       )
     }
     neptune <- get_neptune()
-    
+
     run <- suppressWarnings(reticulate::py_suppress_warnings(
       neptune$init(
         project = project,
@@ -66,14 +66,16 @@ neptune_init <-
         proxies = proxies
       )
     ))
+    neptune_assign(run["source_code/integrations/neptune-r"], as.character(packageVersion("neptune")))
+    neptune_sync(run)
     env_ <- new.env()
     env_$run <- run
     reg.finalizer(env_, function(x)
       tryCatch({
-        x$run$stop()
+        x$run$wait()
       }, error = function(e) {
-        warning(paste0("Failed to stop neptune run: ", as.character(e)))
-      }), onexit = T)
-    
+        warning(paste0("Failed to await neptune run synchronization: ", as.character(e)))
+      }), onexit = TRUE)
+
     return(run)
   }

@@ -1,10 +1,10 @@
 Package: neptune
 Type: Package
 Title: MLOps metadata store. Experiment tracking and model registry for production teams.
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: c(person("Mateusz", "Dominiak", role = c("aut")), person("Rafal Jankowski", email = "rafal.jankowski@neptune.ai", role = c("aut","cre")))
 Maintainer: Rafal Jankowski <rafal.jankowski@neptune.ai>
-Description: Neptune is a metadata store for MLOps, built for teams that run a lot of experiments. 
+Description: Neptune is a metadata store for MLOps, built for teams that run a lot of experiments.
     It gives you a single place to log, store, display, organize, compare, and query all your model-building metadata.
     Neptune is used for:
     • Experiment tracking: Log, display, organize, and compare ML experiments in a single place.
