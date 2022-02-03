@@ -22,17 +22,38 @@ You can use Neptune for free for work, research, and personal projects. All indi
 
 ## Install Neptune R package
 
-Simply run:
+If you don't have a Python installed and just want use Neptune, simply run the following code:
 
 ```R
+install.packages("reticulate")
+library(reticulate)
+install_miniconda()
+
 install.packages("neptune")
+library(neptune)
+neptune_install()
 ```
 
-and
+This code will install [miniconda](https://docs.conda.io/en/latest/miniconda.html) (a minimalistic Python environment) and set it up for you. This is a one time thing and after that you only need to run the last two lines when you want to work with Neptune:
 
 ```R
-library("neptune")
+library(neptune)
 neptune_install()
+```
+
+If you have a Python virtual environment already setup (conda, miniconda, or virtualenv), you can point to it instead of creating a new one:
+
+```R
+# If you are using virtualenv
+install.packages("neptune")
+library(neptune)
+neptune_install(method="virtualenv", envname = "PATH/TO/YOUR/VIRTUALENV")
+
+
+# If you are using conda or miniconda
+install.packages("neptune")
+library(neptune)
+neptune_install(method="conda", envname = "PATH/TO/YOUR/CONDA/ENVIRONMENT")
 ```
 
 ## Create a tracked run
