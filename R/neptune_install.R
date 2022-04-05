@@ -1,7 +1,7 @@
 neptune_install <-
 function(method = c("auto", "virtualenv", "conda"),
                             conda = "auto",
-                            version = "default",
+                            version = "0.15",
                             envname = NULL,
                             extra_packages = c("psutil"),
                             restart_session = TRUE,
