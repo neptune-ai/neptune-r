@@ -1,4 +1,4 @@
-`[<-.neptune.new.run.Run` <-
+`[<-.neptune.new.metadata_containers.run.Run` <-
 function(x, i, value) {
   if (is.null(value)) {
     reticulate::py_del_item(x = x, name = i)
