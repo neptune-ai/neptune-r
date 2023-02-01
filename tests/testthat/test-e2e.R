@@ -37,4 +37,6 @@ test_that("End-to-end smoke test", {
     run["upload/model"]$upload(model_file_path)
 
     neptune_stop(run)
+
+    succeed()
 })
