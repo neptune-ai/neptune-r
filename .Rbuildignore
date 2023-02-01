@@ -1,2 +1,3 @@
-^.github
-^.neptune
+^\.github
+\.neptune$
+\.venv$
