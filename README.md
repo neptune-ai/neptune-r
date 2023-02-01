@@ -125,7 +125,7 @@ You can update the hyperparameters or add new ones later in the code:
 
 ```R
 # Add additional parameters 
-run["model/parameters/seed"] <- RANDOM_SEED
+run["model/parameters/seed"] <- .Random.seed
 
 # Update parameters e.g. after triggering an early stopping
 run["model/parameters/n_epochs"] <- epoch
