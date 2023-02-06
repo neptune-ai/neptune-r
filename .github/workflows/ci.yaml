@@ -41,7 +41,7 @@ jobs:
           needs: check
 
       - name: Install neptune
-        run: R -e 'library("neptune"); neptune_install()'
+        run: Rscript -e 'library("neptune"); neptune_install()'
 
       - uses: r-lib/actions/check-r-package@v2
         with:
