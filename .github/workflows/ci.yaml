@@ -37,8 +37,19 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::rcmdcheck
+          extra-packages: |
+            any::rcmdcheck
+            any::reticulate
           needs: check
+
+      - name: Install neptune
+        run: |
+          library("reticulate")
+          install_miniconda()
+
+          library("neptune")
+          neptune_install()
+        shell: Rscript {0}
 
       - uses: r-lib/actions/check-r-package@v2
         with:
