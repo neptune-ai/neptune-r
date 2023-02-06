@@ -40,9 +40,6 @@ jobs:
           extra-packages: any::rcmdcheck
           needs: check
 
-      - name: Install neptune
-        run: Rscript -e 'library("neptune"); neptune_install()'
-
       - uses: r-lib/actions/check-r-package@v2
         with:
           upload-snapshots: true
