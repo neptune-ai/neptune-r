@@ -3,6 +3,3 @@ repos:
     rev: v0.3.2.9007
     hooks:
       - id: style-files
-      - id: lintr
-        args: [--warn_only]
-        verbose: true
