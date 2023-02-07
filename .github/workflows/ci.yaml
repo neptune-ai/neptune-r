@@ -43,11 +43,11 @@ jobs:
             local::.
           needs: check
 
-      - name: Install Neptune Client
-        run: |
-          reticulate::install_miniconda()
-          neptune::neptune_install()
-        shell: Rscript {0}
+      # - name: Install Neptune Client
+      #   run: |
+      #     reticulate::install_miniconda()
+      #     neptune::neptune_install()
+      #   shell: Rscript {0}
 
       - uses: r-lib/actions/check-r-package@v2
         with:
