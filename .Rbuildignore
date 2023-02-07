@@ -1,3 +1,4 @@
 ^\.github
 \.neptune$
 \.venv$
+^\.pre-commit-config\.yaml$

@@ -1,7 +1,7 @@
 neptune_file_as_image <-
   function(x, ...) {
     if ("ggplot" %in% class(x)) {
-      pth <- paste0(tempfile(), '.png')
+      pth <- paste0(tempfile(), ".png")
       ggplot2::ggsave(
         x,
         filename = pth,
