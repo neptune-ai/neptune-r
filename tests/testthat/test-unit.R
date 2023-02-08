@@ -1,4 +1,4 @@
-test_that("neptune_log and then neptune_fetch_values give the same result", {
+test_that("neptune_append and then neptune_fetch_values give the same result", {
     skip_on_cran()
 
     run <- neptune_init()
@@ -6,7 +6,7 @@ test_that("neptune_log and then neptune_fetch_values give the same result", {
     values <- 1:20
 
     for (x in values) {
-        neptune_log(run["values"], x)
+        neptune_append(run["values"], x)
     }
     neptune_wait(run)
 
@@ -15,7 +15,7 @@ test_that("neptune_log and then neptune_fetch_values give the same result", {
     expect_equal(values, fetched$value)
 })
 
-test_that("$log and then neptune_fetch_values give the same result", {
+test_that("$append and then neptune_fetch_values give the same result", {
     skip_on_cran()
 
     run <- neptune_init()
@@ -23,8 +23,36 @@ test_that("$log and then neptune_fetch_values give the same result", {
     values <- 1:20
 
     for (x in values) {
-        run["values"]$log(x)
+        run["values"]$append(x)
     }
+    neptune_wait(run)
+
+    fetched <- neptune_fetch_values(run["values"])
+
+    expect_equal(values, fetched$value)
+})
+
+test_that("neptune_extend and then neptune_fetch_values give the same result", {
+    skip_on_cran()
+
+    run <- neptune_init()
+
+    values <- 1:20
+    neptune_extend(run["values"], values)
+    neptune_wait(run)
+
+    fetched <- neptune_fetch_values(run["values"])
+
+    expect_equal(values, fetched$value)
+})
+
+test_that("$extend and then neptune_fetch_values give the same result", {
+    skip_on_cran()
+
+    run <- neptune_init()
+
+    values <- 1:20
+    run["values"]$extend(values)
     neptune_wait(run)
 
     fetched <- neptune_fetch_values(run["values"])
