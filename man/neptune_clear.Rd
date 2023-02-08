@@ -33,7 +33,7 @@
 }
 \examples{
   \dontrun{
-    run <- neptune_init(api_token = 'ANONYMOUS',
+    run <- neptune_init(api_token = ANONYMOUS_API_TOKEN,
                         project = "common-r/quickstarts")
     neptune_clear(run['sys/tags'])
   }

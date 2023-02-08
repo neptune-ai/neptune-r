@@ -37,7 +37,7 @@ Useful links:
 \examples{
 \dontrun{
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
-run <- neptune_init(api_token = 'ANONYMOUS',
+run <- neptune_init(api_token = ANONYMOUS_API_TOKEN,
                     project = "common-r/quickstarts")
 df <- data.frame(prediction = runif(10), index = 1:10)
 neptune_upload(run['evaluation/predictions'], neptune_file_as_html(df))

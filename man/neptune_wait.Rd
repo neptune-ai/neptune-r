@@ -5,7 +5,7 @@
 }
 \description{
   Wait for all the tracking calls to finish. In asynchronous connection mode data (default one) is synchronized
-  with the Neptune servers in the background and each call to upload, log etc. is not immediately executed. 
+  with the Neptune servers in the background and each call to upload, log etc. is not immediately executed.
   Wait delays the code execution until all the calls are done.
 }
 \usage{
@@ -39,9 +39,9 @@
 }
 \examples{
   \dontrun{
-    # We are using api token for an anonymous user neptuner. 
+    # We are using api token for an anonymous user neptuner.
     # For your projects use your private token.
-    run <- neptune_init(api_token = 'ANONYMOUS',
+    run <- neptune_init(api_token = ANONYMOUS_API_TOKEN,
                         project = "common-r/quickstarts")
     neptune_wait(run)
   }

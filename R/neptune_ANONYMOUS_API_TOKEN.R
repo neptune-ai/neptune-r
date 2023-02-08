@@ -1,0 +1,1 @@
+ANONYMOUS_API_TOKEN <- get_neptune()["ANONYMOUS_API_TOKEN"]

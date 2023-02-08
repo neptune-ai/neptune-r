@@ -3,7 +3,8 @@ neptune_fetch_runs_table <- function(project,
                                      state = NULL,
                                      owner = NULL,
                                      tag = NULL) {
-  get_neptune()$get_project(project)$fetch_runs_table(
+  project <- get_neptune()$init_project(project = project, mode = "read-only")
+  project$fetch_runs_table(
     id = id,
     state = state,
     owner = owner,

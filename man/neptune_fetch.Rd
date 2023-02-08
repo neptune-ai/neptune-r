@@ -35,7 +35,7 @@ Useful links:
 \examples{
 \dontrun{
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
-resumed_run <- neptune_init(api_token = 'ANONYMOUS',
+resumed_run <- neptune_init(api_token = ANONYMOUS_API_TOKEN,
                     project = "common-r/quickstarts",
                     run="HEL-3")
 params <- neptune_fetch(resumed_run['model/paramaters'])
