@@ -90,6 +90,9 @@ neptune_init_run <-
       )
     }, onexit = TRUE)
 
+    run["source_code/integrations/neptune-r"]$assign(
+      value = as.character(packageVersion("neptune"))
+    )
     return(run)
   }
 
