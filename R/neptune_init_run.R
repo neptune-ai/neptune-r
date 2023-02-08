@@ -1,4 +1,3 @@
-# TODO: docs
 neptune_init_run <-
   function(project = NULL,
            api_token = NULL,

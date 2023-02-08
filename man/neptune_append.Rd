@@ -1,7 +1,8 @@
-\name{neptune_log}
+\name{neptune_append}
+\alias{neptune_append}
 \alias{neptune_log}
 \title{
-Logs the provided number or a collection of numbers.
+Appends the provided number or a collection of numbers.
 }
 \description{
 Logs the provided number or a collection of numbers.
@@ -11,10 +12,10 @@ Available for following field types (https://docs.neptune.ai/api-reference/field
             * `FileSeries`
 }
 \usage{
-neptune_log(x, value, step=NULL, timestamp=NULL, wait=FALSE, ...)
+neptune_append(x, value, step=NULL, timestamp=NULL, wait=FALSE, ...)
 }
 \arguments{
-  \item{x}{Field, for which we want to log value}
+  \item{x}{Field, for which we want to append value}
   \item{value}{Value or collection of values to be added to the field.}
   \item{step}{(numeric or integer) - Index of the log entry being appended. Must be strictly increasing.}
   \item{timestamp}{(numeric or integer) - Time index of the log entry being appended in form of Unix time. If NULL current time will be used as a timestamp.}
@@ -44,7 +45,7 @@ Useful links:
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
 run <- neptune_init(api_token = ANONYMOUS_API_TOKEN,
                     project = "common-r/quickstarts")
-neptune_log(run['loss'], 0.1)
+neptune_append(run['loss'], 0.1)
 }
 }
 \keyword{interface}

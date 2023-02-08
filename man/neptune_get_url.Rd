@@ -1,5 +1,5 @@
-\name{neptune_get_run_url}
-\alias{neptune_get_run_url}
+\name{neptune_get_url}
+\alias{neptune_get_url}
 \title{
   Returns a direct link to run in Neptune. It's the same link that is printed at the moment of initialization of the run.
 }
@@ -7,7 +7,7 @@
   Returns a direct link to run in Neptune. It's the same link that is printed at the moment of initialization of the run.
 }
 \usage{
-  neptune_get_run_url(run)
+  neptune_get_url(run)
 }
 \arguments{
   \item{run}{
@@ -38,7 +38,7 @@
     # For your projects use your private token.
     run <- neptune_init(api_token = ANONYMOUS_API_TOKEN,
                         project = "common-r/quickstarts")
-    neptune_get_run_url(run)
+    neptune_get_url(run)
   }
 }
 \keyword{interface}

@@ -6,7 +6,6 @@ get_neptune <- function() {
         neptune <- reticulate::import("neptune.new")
       },
       error = function(e) {
-        # TODO: remove this?
         message("couldn't import neptune client. Trying to install")
         neptune_install()
         neptune <- reticulate::import("neptune.new")

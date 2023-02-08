@@ -1,4 +1,5 @@
-\name{neptune_init}
+\name{neptune_init_run}
+\alias{neptune_init_run}
 \alias{neptune_init}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
