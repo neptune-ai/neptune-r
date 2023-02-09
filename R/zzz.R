@@ -3,10 +3,14 @@
     reticulate::configure_environment(pkgname)
 
     # This will fail before Neptune is installed
-    try(
+    tryCatch(
       {
         ANONYMOUS_API_TOKEN <<- get_neptune()["ANONYMOUS_API_TOKEN"]
       },
-      silent = TRUE
+      error = function(e) {
+        warning(
+          "ANONYMOUS_API_TOKEN was not initialized because Neptune client appears not to be installed"
+        )
+      }
     )
   }
