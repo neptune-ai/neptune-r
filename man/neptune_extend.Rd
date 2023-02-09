@@ -11,7 +11,7 @@ Available for following field types (https://docs.neptune.ai/api-reference/field
             * `FileSeries`
 }
 \usage{
-neptune_extend(x, value, step=NULL, timestamp=NULL, wait=FALSE, ...)
+neptune_extend(x, values, steps=NULL, timestamps=NULL, wait=FALSE, ...)
 }
 \arguments{
   \item{x}{Field, for which we want to append value}
