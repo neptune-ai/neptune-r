@@ -17,7 +17,7 @@ jobs:
       matrix:
         config:
           - {os: macos-latest,   r: 'release'}
-          # - {os: windows-latest, r: 'release'}  # TODO: check why it fails  # TODO: check why it fails
+          # - {os: windows-latest, r: 'release'}  # TODO: check why it fails
           - {os: ubuntu-latest,   r: 'release'}
 
     env:
@@ -27,31 +27,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: r-lib/actions/setup-pandoc@v2
-
-      - uses: r-lib/actions/setup-r@v2
-        with:
-          r-version: ${{ matrix.config.r }}
-          http-user-agent: ${{ matrix.config.http-user-agent }}
-          use-public-rspm: true
-
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          extra-packages: |
-            any::rcmdcheck
-            any::reticulate
-            local::.
-          needs: check
-
-      - uses: conda-incubator/setup-miniconda@v2
-        with:
-          auto-update-conda: true
-
-      - run: Rscript -e 'neptune::neptune_install()'
-
-      - uses: r-lib/actions/check-r-package@v2
-        with:
-          upload-snapshots: true
+      - name: Test
         env:
           NEPTUNE_API_TOKEN: ${{ secrets.E2E_NEPTUNE_API_TOKEN }}
           NEPTUNE_PROJECT: e2e-tests/integrations
+        uses: ./.github/actions/e2e
