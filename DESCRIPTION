@@ -17,3 +17,4 @@ BugReports: https://github.com/neptune-ai/neptune-r/issues
 Encoding: UTF-8
 SystemRequirements: Python (>= 3.0.0), Neptune (https://neptune.ai/)
 Imports: reticulate (>= 1.22), this.path (>= 0.4.4), rstudioapi (>= 0.7), ggplot2 (>= 3.3.5), plotly (>= 4.9.4.1), htmlwidgets (>= 1.5.3), methods
+Suggests: testthat (>= 3.0.0)
