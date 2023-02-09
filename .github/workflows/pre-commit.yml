@@ -23,13 +23,10 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::precommit
+          extra-packages:
+            any::precommit
+            any::styler
           needs: check
-
-      - name: Install R dependencies
-        run: |
-          precommit::use_precommit()
-        shell: Rscript {0}
 
       - name: Pre-commit
         uses: pre-commit/action@v3.0.0
