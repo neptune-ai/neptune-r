@@ -17,7 +17,7 @@ jobs:
       matrix:
         config:
           - {os: macos-latest,   r: 'release'}
-          # # - {os: windows-latest, r: 'release'}  # TODO: check why it fails  # TODO: check why it fails
+          # - {os: windows-latest, r: 'release'}  # TODO: check why it fails  # TODO: check why it fails
           - {os: ubuntu-latest,   r: 'release'}
 
     env:
