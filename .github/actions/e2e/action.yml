@@ -8,6 +8,7 @@ inputs:
     default: .
 runs:
   using: "composite"
+
   steps:
     - uses: actions/checkout@v3
 
@@ -37,7 +38,3 @@ runs:
     - uses: r-lib/actions/check-r-package@v2
       with:
         upload-snapshots: true
-      env:
-        NEPTUNE_API_TOKEN: ${{ secrets.E2E_NEPTUNE_API_TOKEN }}
-        NEPTUNE_PROJECT: e2e-tests/integrations
-
