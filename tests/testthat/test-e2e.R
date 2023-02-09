@@ -3,7 +3,7 @@ library("ggplot2")
 test_that("End-to-end smoke test", {
   skip_on_cran()
 
-  run <- neptune_init()
+  run <- neptune_init_run()
 
   params <- list(
     "dense_units" = 128,

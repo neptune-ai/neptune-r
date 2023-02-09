@@ -1,7 +1,7 @@
 test_that("neptune_append and then neptune_fetch_values give the same result", {
   skip_on_cran()
 
-  run <- neptune_init()
+  run <- neptune_init_run()
 
   values <- 1:20
 
@@ -18,7 +18,7 @@ test_that("neptune_append and then neptune_fetch_values give the same result", {
 test_that("$append and then neptune_fetch_values give the same result", {
   skip_on_cran()
 
-  run <- neptune_init()
+  run <- neptune_init_run()
 
   values <- 1:20
 
@@ -35,7 +35,7 @@ test_that("$append and then neptune_fetch_values give the same result", {
 test_that("neptune_extend and then neptune_fetch_values give the same result", {
   skip_on_cran()
 
-  run <- neptune_init()
+  run <- neptune_init_run()
 
   values <- 1:20
   neptune_extend(run["values"], values)
@@ -49,7 +49,7 @@ test_that("neptune_extend and then neptune_fetch_values give the same result", {
 test_that("$extend and then neptune_fetch_values give the same result", {
   skip_on_cran()
 
-  run <- neptune_init()
+  run <- neptune_init_run()
 
   values <- 1:20
   run["values"]$extend(values)
@@ -63,7 +63,7 @@ test_that("$extend and then neptune_fetch_values give the same result", {
 test_that("assign and then neptune_fetch give the same result", {
   skip_on_cran()
 
-  run <- neptune_init()
+  run <- neptune_init_run()
 
   params <- list(
     "dense_units" = 128,
@@ -82,4 +82,10 @@ test_that("assign and then neptune_fetch give the same result", {
   sorted <- function(lst) lst[sort(names(lst))]
 
   expect_equal(sorted(params), sorted(fetched))
+})
+
+test_that("ANONYMOUS_API_TOKEN is available", {
+  skip_on_cran()
+  neptune_init_run(api_token = ANONYMOUS_API_TOKEN, project = "common/quickstarts")
+  succeed()
 })
