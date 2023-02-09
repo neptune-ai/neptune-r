@@ -6,9 +6,6 @@ API token for anonymous logging.
 \description{
 You can use this value for the api_token parameter of the init methods.
 }
-\usage{
-ANONYMOUS_API_TOKEN
-}
 \author{
 Authors:
 \itemize{
