@@ -63,7 +63,7 @@ run <- neptune_init(project="MY_WORKSPACE/MY_PROJECT",
                     api_token="NEPTUNE_API_TOKEN")
 ```
 
-This code creates a Run in project of your choice. This will be your gateway to log metadata to Neptune. 
+This code creates a run in the specified project. This will be your gateway to logging metadata to Neptune.
 
 You need to pass your credentials (project and API token) to the `neptune_init()` method. You can also set the API token globally:
 
