@@ -144,7 +144,7 @@ for (i in 1:epochs) {
 run["train/epoch/loss"]$log(loss)
 ```
 
-You can log training metrics to Neptune using series fields. In Neptune, there are three types of series - float series, string series, and file series. Each `neptune_log()` will add a new value at the end of the series. 
+You can log training metrics to Neptune using series fields. In Neptune, there are three types of series - float series, string series, and file series. Each `neptune_append()` will add a new value at the end of the series. 
 
 ### Log evaluation results
 
