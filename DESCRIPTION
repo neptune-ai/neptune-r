@@ -1,7 +1,7 @@
 Package: neptune
 Type: Package
 Title: MLOps Metadata Store - Experiment Tracking and Model Registry for Production Teams
-Version: 0.2.3
+Version: 0.3.0
 Authors@R: c(person("Mateusz", "Dominiak", role = c("aut")), person("Rafal Jankowski", email = "rafal.jankowski@neptune.ai", role = c("aut","cre")))
 Maintainer: Rafal Jankowski <rafal.jankowski@neptune.ai>
 Description: An interface to Neptune. A metadata store for MLOps, built for teams that run a lot of experiments.

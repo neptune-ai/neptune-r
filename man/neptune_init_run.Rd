@@ -1,4 +1,5 @@
-\name{neptune_init}
+\name{neptune_init_run}
+\alias{neptune_init_run}
 \alias{neptune_init}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
@@ -98,7 +99,7 @@ Useful links:
 \examples{
 \dontrun{
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
-run <- neptune_init(api_token = 'ANONYMOUS',
+run <- neptune_init(api_token = ANONYMOUS_API_TOKEN,
                     project = "common-r/quickstarts")
 }
 }

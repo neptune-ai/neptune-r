@@ -32,7 +32,7 @@
 }
 \examples{
   \dontrun{
-    run <- neptune_init(api_token = 'ANONYMOUS',
+    run <- neptune_init(api_token = ANONYMOUS_API_TOKEN,
                         project = "common-r/quickstarts")
     last_auc_value <- neptune_fetch_last(run['metrics/auc'])
   }

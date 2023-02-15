@@ -33,7 +33,7 @@
 }
 \examples{
   \dontrun{
-    run <- neptune_init(api_token = 'ANONYMOUS',
+    run <- neptune_init(api_token = ANONYMOUS_API_TOKEN,
                         project = "common-r/quickstarts")
     df <- neptune_fetch_values(run['metrics/auc'])
   }

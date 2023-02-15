@@ -1,26 +1,14 @@
-\name{neptune_assign}
-\alias{neptune_assign}
+\name{ANONYMOUS_API_TOKEN}
+\alias{ANONYMOUS_API_TOKEN}
 \title{
-Assigns the provided value to the field.
+API token for anonymous logging.
 }
 \description{
-Assigns the provided value to the field.
-}
-\usage{
-neptune_assign(x, value, wait=FALSE)
-}
-\arguments{
-  \item{x}{Field or run, for which we want to assign the value}
-  \item{value}{Value to be stored in a field.}
-  \item{wait}{logical - If TRUE the client will wait to send all tracked metadata to the server. This makes the call synchronous.}
-}
-\value{
-None
+You can use this value for the api_token parameter of the init methods.
 }
 \author{
 Authors:
 \itemize{
-  \item Mateusz Dominiak
   \item Maintainer: Neptune DevTeam Dev\email{backend@neptune.ai}
 }
 }
@@ -37,7 +25,5 @@ Useful links:
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
 run <- neptune_init(api_token = ANONYMOUS_API_TOKEN,
                     project = "common-r/quickstarts")
-neptune_assign(run['parameters'], list(epochs=100, lr=0.01))
 }
 }
-\keyword{interface}

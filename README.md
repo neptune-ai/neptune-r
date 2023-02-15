@@ -22,7 +22,7 @@ You can use Neptune for free for work, research, and personal projects. All indi
 
 ## Install Neptune R package
 
-If you don't have a Python installed and just want use Neptune, simply run the following code:
+If you don't have Python installed and just want to use Neptune, simply run the following code:
 
 ```R
 install.packages("reticulate")
@@ -34,14 +34,14 @@ library(neptune)
 neptune_install()
 ```
 
-This code will install [miniconda](https://docs.conda.io/en/latest/miniconda.html) (a minimalistic Python environment) and set it up for you. This is a one time thing and after that you only need to run the last two lines when you want to work with Neptune:
+This code will install [miniconda](https://docs.conda.io/en/latest/miniconda.html) (a minimalistic Python environment) and set it up for you. This is a one-time thing and after that, you only need to run the last two lines when you want to work with Neptune:
 
 ```R
 library(neptune)
 neptune_install()
 ```
 
-If you have a Python virtual environment already setup (conda, miniconda, or virtualenv), you can point to it instead of creating a new one:
+If you have a Python virtual environment already set up (conda, miniconda, or virtualenv), you can point to it instead of creating a new one:
 
 ```R
 # If you are using virtualenv
@@ -63,7 +63,7 @@ run <- neptune_init(project="MY_WORKSPACE/MY_PROJECT",
                     api_token="NEPTUNE_API_TOKEN")
 ```
 
-This code creates a Run in the project of your choice. This will be your gateway to log metadata to Neptune. 
+This code creates a run in the specified project. This will be your gateway to logging metadata to Neptune.
 
 You need to pass your credentials (project and API token) to the `neptune_init()` method. You can also set the API token globally:
 
@@ -102,7 +102,7 @@ neptune_stop(run)
 run$stop()
 ```
 
-If you are running a script it will stop tracking automatically at the end. However, in interactive environment such as RStudio you need to to stop it explicitly.
+If you are running a script it will stop tracking automatically at the end. However, in an interactive environment such as RStudio, you need to stop it explicitly.
 
 ## Track metadata
 
@@ -144,7 +144,7 @@ for (i in 1:epochs) {
 run["train/epoch/loss"]$log(loss)
 ```
 
-You can log training metrics to Neptune using series fields. In Neptune there are three types of series - float series, string series, and file series. Each `neptune_log()` will add a new value at the end of the series. 
+You can log training metrics to Neptune using series fields. In Neptune, there are three types of series - float series, string series, and file series. Each `neptune_append()` will add a new value at the end of the series. 
 
 ### Log evaluation results
 

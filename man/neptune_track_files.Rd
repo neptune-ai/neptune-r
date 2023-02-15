@@ -4,7 +4,7 @@
   Saves the artifact metadata.
 }
 \description{
-  Saves the artifact metadata: version (hash), location (path), size, folder structure, and contents to Neptune.  Works for files, folders or S3-compatible storage. 
+  Saves the artifact metadata: version (hash), location (path), size, folder structure, and contents to Neptune.  Works for files, folders or S3-compatible storage.
 }
 \usage{
   neptune_track_files(x, path, destination=NULL, wait=FALSE)
@@ -35,9 +35,9 @@
 }
 \examples{
 \dontrun{
-  # We are using api token for an anonymous user neptuner. 
+  # We are using api token for an anonymous user neptuner.
   # For your projects use your private token.
-  run <- neptune_init(api_token = 'ANONYMOUS',
+  run <- neptune_init(api_token = ANONYMOUS_API_TOKEN,
                       project = "common-r/quickstarts")
   neptune_track_files(run['artifacts/images'], 'datasets/train/images')
 }

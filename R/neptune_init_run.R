@@ -1,4 +1,4 @@
-neptune_init <-
+neptune_init_run <-
   function(project = NULL,
            api_token = NULL,
            run = NULL,
@@ -54,7 +54,7 @@ neptune_init <-
     neptune <- get_neptune()
 
     run <- suppressWarnings(reticulate::py_suppress_warnings(
-      neptune$init(
+      neptune$init_run(
         project = project,
         api_token = api_token,
         run = run,
@@ -89,5 +89,10 @@ neptune_init <-
       )
     }, onexit = TRUE)
 
+    run["source_code/integrations/neptune-r"]$assign(
+      value = as.character(packageVersion("neptune"))
+    )
     return(run)
   }
+
+neptune_init <- neptune_init_run

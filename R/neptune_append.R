@@ -1,6 +1,8 @@
-neptune_log <-
+neptune_append <-
   function(x, value, step = NULL, timestamp = NULL, wait = FALSE, ...) {
     check_handler(x)
     value <- process_value(value, ...)
-    x$log(value = value, step = step, timestamp = timestamp, wait = wait)
+    x$append(value = value, step = step, timestamp = timestamp, wait = wait)
   }
+
+neptune_log <- neptune_append

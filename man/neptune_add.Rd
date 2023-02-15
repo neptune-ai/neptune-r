@@ -35,7 +35,7 @@ Useful links:
 \examples{
 \dontrun{
 # We are using api token for an anonymous user neptuner. For your projects use your private token.
-run <- neptune_init(api_token = 'ANONYMOUS',
+run <- neptune_init(api_token = ANONYMOUS_API_TOKEN,
                     project = "common-r/quickstarts")
 neptune_add(run['sys/tags'], 'lgbm')
 }

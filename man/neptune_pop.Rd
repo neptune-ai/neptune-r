@@ -40,9 +40,9 @@
 }
 \examples{
   \dontrun{
-    # We are using api token for an anonymous user neptuner. 
+    # We are using api token for an anonymous user neptuner.
     # For your projects use your private token.
-    run <- neptune_init(api_token = 'ANONYMOUS',
+    run <- neptune_init(api_token = ANONYMOUS_API_TOKEN,
                         project = "common-r/quickstarts")
     run['lr'] <- 0.001
     neptune_pop(run, 'lr')
