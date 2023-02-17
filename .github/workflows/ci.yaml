@@ -10,12 +10,11 @@ jobs:
   R-CMD-check:
     runs-on: ${{ matrix.os }}
 
-    name: ${{ matrix.os }} (R ${{ matrix.r }})
+    name: ${{ matrix.os }}
 
     strategy:
       fail-fast: false
       matrix:
-        r: [ release ]
         os: [ ubuntu-latest, macos-latest ]
 
     env:
