@@ -37,8 +37,7 @@ runs:
 
     - run: neptune::neptune_install()
       shell: Rscript {0}
-      with:
-        working-directory: ${{ inputs.working_directory }}
+      working-directory: ${{ inputs.working_directory }}
 
     - uses: r-lib/actions/check-r-package@v2
       with:
