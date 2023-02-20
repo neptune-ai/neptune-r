@@ -29,6 +29,7 @@ runs:
           any::reticulate
           local::.
         needs: check
+        working-directory: ${{ inputs.working_directory }}
 
     - uses: conda-incubator/setup-miniconda@v2
       with:
@@ -36,7 +37,10 @@ runs:
 
     - run: neptune::neptune_install()
       shell: Rscript {0}
+      with:
+        working-directory: ${{ inputs.working_directory }}
 
     - uses: r-lib/actions/check-r-package@v2
       with:
         upload-snapshots: true
+        working-directory: ${{ inputs.working_directory }}
