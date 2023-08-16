@@ -18,7 +18,7 @@ With Neptune, Data Scientists can develop production-ready models faster, and ML
 # Getting started
 
 ## Register
-[Sign up to Neptune](https://neptune.ai).
+[Sign up for Neptune](https://neptune.ai).
 
 You can use Neptune for free for work, research, and personal projects. Individual accounts are free, and if you're interested in using Neptune as a team, [check available plans](https://neptune.ai/pricing).
 
