@@ -1,24 +1,26 @@
 <div align="center">
-  <img src="https://neptune.ai/wp-content/uploads/neptune-logo-less-margin-e1611939742683.png" width="400" /><br><br>
-</div>
+    <img src="https://neptune.ai/wp-content/uploads/2023/08/Github-cover.png" width="1500" />
+ </div>
 
-# Neptune
+## What is neptune.ai?
 
-[Neptune](https://neptune.ai/) is a metadata store for MLOps, built for teams that run a lot of experiments.
+Neptune is a lightweight experiment tracker for ML teams that struggle with debugging and reproducing experiments, sharing results, and messy model handover. **It offers a single place to track, compare, store, and collaborate on experiments and models.**
 
-It gives you a single place to log, store, display, organize, compare, and query all your model-building metadata.
+With Neptune, Data Scientists can develop production-ready models faster, and ML Engineers can access model artifacts instantly in order to deploy them to production.
+&nbsp;
 
-Neptune is used for:
-* **Experiment tracking**: Log, display, organize, and compare ML experiments in a single place.
-* **Model registry**: Version, store, manage, and query trained models, and model building metadata.
-* **Monitoring ML runs live**: Record and monitor model training, evaluation, or production runs live
+<a href="https://www.youtube.com/watch?v=bQzgnqM5J6U"><b>Watch a 3min explainer video →</b></a>
+&nbsp;
+
+<a href="https://neptune.ai/demo"><b>Watch a 20min product demo →</b></a>
+&nbsp;
 
 # Getting started
 
 ## Register
-Go to https://neptune.ai/ and sign up.
+[Sign up for Neptune](https://neptune.ai).
 
-You can use Neptune for free for work, research, and personal projects. All individual accounts are free within quota.
+You can use Neptune for free for work, research, and personal projects. Individual accounts are free, and if you're interested in using Neptune as a team, [check available plans](https://neptune.ai/pricing).
 
 ## Install Neptune R package
 
@@ -188,8 +190,11 @@ run["model"]$upload_files("models")
 ```
 
 # Getting help
-If you get stuck, don't worry we are here to help:
 
- * [Neptune documentation](https://docs.neptune.ai)
- * [Chat with us](https://neptune.ai/?chat-with-us)
- * [GitHub Issues](https://github.com/neptune-ai/neptune-r/issues)
+If you got stuck or simply want to talk to us, here are your options:
+
+* Check the [Neptune R client package documentation](https://docs.neptune.ai/integrations/r/)
+* Check our [FAQ page](https://docs.neptune.ai/getting_help)
+* You can submit bug reports, feature requests, or contributions directly to the repository.
+* Chat! When in the Neptune application, click on the blue message icon in the bottom-right corner and send a message. A real person will talk to you ASAP (typically very ASAP),
+* You can just shoot us an email at support@neptune.ai
