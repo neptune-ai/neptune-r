@@ -21,17 +21,8 @@ neptune_init_run <-
     if (!(mode %in% c("async", "sync", "offline", "debug", "read-only"))) {
       stop('mode must be one of "async", "sync", "offline", "debug", "read-only"')
     }
-    if (is.null(source_files)) {
-      this.path <- getNamespace("this.path")
-      this.path_version <- as.numeric_version(getNamespaceVersion(this.path))
-      source_files <- if (this.path_version >= "2.0.0")
-        this.path$try.sys.path()
-      else if (this.path_version >= "1.3.0")
-        this.path$try.this.path()
-      else tryCatch({
-        this.path$this.path()
-      }, error = function(e) NA_character_)
-    }
+    if (is.null(source_files))
+      source_files <- this.path::try.this.path(n = 1)
     requireNamespace("reticulate", quietly = TRUE)
     if (!isNamespaceLoaded("reticulate")) {
       stop("couldn't load reticulate package")
